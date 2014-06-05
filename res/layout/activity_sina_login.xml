@@ -1,0 +1,48 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/allbackground"
+    tools:context=".SinaLoginActivity" >
+
+    <Button
+        android:id="@+id/but_sina_login"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/sharebuyselectbutton"
+        android:text="微博认证OAUTH2.0" />
+
+    <Button
+        android:id="@+id/but_sina_load"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/but_sina_login"
+        android:layout_alignBottom="@+id/but_sina_login"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/but_sina_login"
+        android:background="@drawable/sharebuyselectbutton"
+        android:text="单点登录sso" />
+
+    <Button
+        android:id="@+id/but_sina_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/but_sina_login"
+        android:layout_below="@+id/but_sina_login"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/sharebuyselectbutton"
+        android:text="注销" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/but_sina_cancel"
+        android:layout_marginTop="10dp"
+        android:text="@string/text_sina" />
+
+</RelativeLayout>

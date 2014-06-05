@@ -1,0 +1,124 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/allbackground"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".LoadActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/img_logo_load"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"
+            android:layout_marginTop="25dp"
+            android:layout_weight="2"
+            android:background="@drawable/logo" />
+
+        <Button
+            android:id="@+id/but_sina_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="45dp"
+            android:layout_marginRight="45dp"
+            android:layout_weight="1"
+            android:text="新浪用户登录"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/but_bg" />
+
+        <Button
+            android:id="@+id/but_qq_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="45dp"
+            android:layout_marginRight="45dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:text="腾讯账号登录"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/but_bg" />
+
+        <Button
+            android:id="@+id/but_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="45dp"
+            android:layout_marginRight="45dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:text="部落用户登录"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/but_bg"  />
+        
+        <Button 
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_marginTop="10dp"
+            android:background="#000000"/>
+
+        <Button
+            android:id="@+id/but_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="45dp"
+            android:layout_marginRight="45dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+             android:text="新用户注册"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/but_bg"  />
+        
+       <Button 
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_marginTop="10dp"
+            android:background="#000000"/>
+
+    </LinearLayout>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:orientation="horizontal">
+
+      <RelativeLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent" >
+
+          <ImageButton
+              android:id="@+id/img_but_help"
+              android:layout_width="40dp"
+              android:layout_height="30dp"
+              android:layout_alignParentLeft="true"
+              android:layout_centerVertical="true"
+              android:layout_marginLeft="10dp"
+              android:background="@drawable/img_but_help" />
+
+          <ImageButton
+              android:id="@+id/img_but_serve"
+              android:layout_width="60dp"
+              android:layout_height="30dp"
+              android:layout_alignParentRight="true"
+              android:layout_alignTop="@+id/img_but_help"
+              android:background="@drawable/img_but_serve" />
+
+      </RelativeLayout>
+
+  </LinearLayout>
+
+</LinearLayout>

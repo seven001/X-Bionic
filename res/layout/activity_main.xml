@@ -1,0 +1,128 @@
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_lt"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_2"
+    tools:context=".MainActivity" >
+
+    <FrameLayout
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+        
+	      <RelativeLayout 
+	          android:layout_width="match_parent"
+	          android:layout_height="53dp"
+	          android:background="@drawable/title_back">
+	          
+	          <TextView 
+	              android:layout_width="match_parent"
+	              android:layout_height="match_parent"
+	              android:textColor="#ffffff"
+	              android:textSize="22sp" 
+	              android:gravity="center"
+	              android:text="部落平方"/>
+	          
+	          <Button 
+	              android:id="@+id/but_drawer"
+	              android:layout_width="53dp"
+	              android:layout_height="match_parent"
+	              android:background="@drawable/listbutton"/>
+	
+	          <Button
+	              android:id="@+id/but_reach"
+	              android:layout_width="53dp"
+	              android:layout_height="match_parent"
+	              android:layout_alignParentRight="true"
+	              android:background="@drawable/btn_search" />
+	          
+	      </RelativeLayout>
+	        <FrameLayout
+                android:id="@+id/main_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+	          <LinearLayout 
+	              android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:orientation="vertical">
+				<LinearLayout
+			        android:layout_width="match_parent"
+			        android:layout_height="200dp">
+			
+			    </LinearLayout>
+			
+			    <LinearLayout
+			        android:layout_width="match_parent"
+			        android:layout_height="100dp"
+			        android:orientation="horizontal" >
+			
+				    <Button
+				        android:id="@+id/but_product"
+				        android:layout_width="match_parent"
+				        android:layout_height="match_parent"
+				        android:layout_weight="1"
+				        android:layout_marginLeft="10dp"
+				        android:layout_marginRight="5dp"
+				        android:layout_marginTop="10dp"
+				        android:background="@drawable/but_info_black"
+				        android:textColor="#ffffff"
+				        android:text="产品购买" />
+				    <Button
+				        android:id="@+id/but_story"
+				        android:layout_width="match_parent"
+				        android:layout_height="match_parent"
+				        android:layout_marginLeft="5dp"
+				        android:layout_marginRight="10dp"
+				        android:layout_marginTop="10dp"
+				        android:background="@drawable/but_info_white"
+				        android:layout_weight="1"
+				        android:textColor="#000000"
+				        android:text="达人故事" />
+			    </LinearLayout>
+			    <LinearLayout
+			        android:layout_width="match_parent"
+			        android:layout_height="100dp"
+			        android:orientation="horizontal" >
+			
+				    <Button
+				        android:id="@+id/but_activity"
+				        android:layout_width="match_parent"
+				        android:layout_height="match_parent"
+				        android:layout_weight="1"
+				        android:layout_marginLeft="10dp"
+				        android:layout_marginRight="5dp"
+				        android:layout_marginTop="10dp"
+				        android:background="@drawable/but_info_white"
+				        android:textColor="#000000"
+				        android:text="X的活动" />
+				    <Button
+				        android:id="@+id/but_introduce"
+				        android:layout_width="match_parent"
+				        android:layout_height="match_parent"
+				        android:background="@drawable/but_info_black"
+				        android:textColor="#ffffff"
+				        android:layout_marginLeft="5dp"
+				        android:layout_marginRight="10dp"
+				        android:layout_marginTop="10dp"
+				        android:layout_weight="1"
+				        android:text="X的介绍" />
+			    </LinearLayout>
+			   </LinearLayout>
+            </FrameLayout>
+         </LinearLayout>
+    </FrameLayout>
+
+    <ListView
+        android:id="@+id/left_drawer"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:choiceMode="singleChoice"
+        android:background="@drawable/allbackground"/>
+
+</android.support.v4.widget.DrawerLayout>

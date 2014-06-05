@@ -1,0 +1,64 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/allbackground"
+    tools:context=".RegisterActivity" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/title_back"
+        android:gravity="center"
+        android:text="注册"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
+    
+    <Button
+        android:id="@+id/but_register_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/but_back"/>
+
+     <Button
+         android:id="@+id/phone_register"
+         android:layout_width="match_parent"
+         android:layout_height="45dp"
+         android:layout_alignLeft="@+id/qq_register"
+         android:layout_below="@+id/qq_register"
+         android:layout_marginRight="45dp"
+         android:layout_marginTop="16dp"
+         android:background="@drawable/but_bg"
+         android:text="手机用户注册"
+         android:textColor="#FFFFFF"
+         android:textSize="18dp" />
+
+     <Button
+         android:id="@+id/sina_register"
+         android:layout_width="match_parent"
+         android:layout_height="45dp"
+         android:layout_below="@+id/textView1"
+         android:layout_centerHorizontal="true"
+         android:layout_marginTop="29dp"
+         android:layout_marginLeft="45dp"
+         android:layout_marginRight="45dp"
+         android:background="@drawable/but_bg"
+         android:text="新浪微博验证注册"
+         android:textColor="#FFFFFF"
+         android:textSize="18dp"/>
+
+     <Button
+         android:id="@+id/qq_register"
+         android:layout_width="match_parent"
+         android:layout_height="45dp"
+         android:layout_alignLeft="@+id/sina_register"
+         android:layout_below="@+id/sina_register"
+         android:layout_marginRight="45dp"
+         android:layout_marginTop="16dp"
+         android:background="@drawable/but_bg"
+         android:text="腾讯账号验证注册"
+         android:textColor="#FFFFFF"
+         android:textSize="18dp" />
+
+</RelativeLayout>

@@ -1,0 +1,65 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/home">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="243dp">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal" >
+
+	    <Button
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:layout_weight="1"
+	        android:layout_marginLeft="5dp"
+	        android:layout_marginRight="5dp"
+	        android:layout_marginTop="5dp"
+	        android:background="@drawable/user_info_popup_bg"
+	        android:textColor="#ffffff"
+	        android:text="产品购买" />
+	    <Button
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:layout_marginLeft="5dp"
+	        android:layout_marginRight="5dp"
+	        android:layout_marginTop="5dp"
+	        android:layout_weight="1"
+	        android:textColor="#000000"
+	        android:text="达人故事" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal" >
+
+	    <Button
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:layout_weight="1"
+	        android:layout_marginLeft="5dp"
+	        android:layout_marginRight="5dp"
+	        android:layout_marginTop="5dp"
+	        android:textColor="#000000"
+	        android:text="X的活动" />
+	    <Button
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:background="@drawable/user_info_popup_bg"
+	        android:textColor="#ffffff"
+	        android:layout_marginLeft="5dp"
+	        android:layout_marginRight="5dp"
+	        android:layout_marginTop="5dp"
+	        android:layout_weight="1"
+	        android:text="X的介绍" />
+    </LinearLayout>
+    
+</LinearLayout>

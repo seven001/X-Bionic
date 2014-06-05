@@ -1,0 +1,115 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/peoplebackground"
+    tools:context=".LoginActivity" >
+    
+    <FrameLayout 
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/title_back">
+        <Button
+            android:id="@+id/but_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/but_back"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="首页"
+            android:textColor="#FFFFFF"
+            android:textSize="18dp" />
+
+    </FrameLayout>
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+        <TextView
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="36dp"
+	        android:gravity="center"
+	        android:text="无线增值服务应用，欢迎你！"
+	        android:textColor="#CFCFCF"
+	        android:textSize="20sp" />
+        
+    </LinearLayout>    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+       <FrameLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+
+         <EditText
+             android:id="@+id/user_login"
+             android:layout_width="match_parent"
+             android:layout_height="42dp"
+             android:layout_marginLeft="25dp"
+             android:layout_marginRight="25dp"
+             android:layout_marginTop="39dp"
+             android:background="@drawable/but_go_shape"
+             android:ems="10"
+             android:gravity="center"
+             android:hint="用户名"
+             android:textColor="#ffffff" />
+
+         <EditText
+             android:id="@+id/password_login"
+             android:layout_width="match_parent"
+             android:layout_height="42dp"
+             android:layout_marginLeft="25dp"
+             android:layout_marginRight="25dp"
+             android:layout_marginTop="100dp"
+             android:background="@drawable/but_go_shape"
+             android:ems="10"
+             android:gravity="center"
+             android:hint="请输入密码"
+             android:textColor="#ffffff" 
+             android:inputType="textPassword" />
+
+         <ImageView
+             android:layout_width="40dp"
+             android:layout_height="40dp"
+             android:background="@drawable/personpicture"
+             android:layout_marginTop="40dp"
+             android:layout_marginLeft="40dp" />
+
+         <ImageView
+             android:layout_width="40dp"
+             android:layout_height="40dp"
+             android:src="@drawable/keypicture"
+             android:layout_marginTop="100dp"
+             android:layout_marginLeft="40dp" />
+
+         <Button
+             android:id="@+id/but_enter"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="180dp"
+             android:layout_marginLeft="25dp"
+             android:layout_marginRight="25dp"
+             android:background="@drawable/btn_enter" />
+
+         <Button
+             android:id="@+id/but_forgetpw"
+             android:layout_width="wrap_content"
+             android:layout_height="20dp"
+             android:background="@drawable/passwordpicture"
+             android:layout_marginLeft="25dp"
+             android:layout_marginTop="249dp"
+              />
+        
+    </FrameLayout>
+        
+    </LinearLayout>
+
+  
+
+</LinearLayout>

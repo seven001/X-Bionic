@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">X-Bionic</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_image_logo">X-Bionic</string>
+    <string name="title_activity_load">LoadActivity</string>
+    <string name="title_activity_qq_login">QQ_loginActivity</string>
+    <string name="title_activity_qqlogin">QQLoginActivity</string>
+    <string name="title_activity_sina_login">SinaLoginActivity</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="text_sina">使用SSO登录前，请检查手机上是否已经安装新浪微博博客客户端，目前仅3.00及以上微博客户端版本支持SSO；如果为安装，将自动转为Oauth2.0进行认证</string>
+    <string name="title_activity_image_welcome">ImageWelcomeActivity</string>
+    <string name="title_activity_welcome_fragment">WelcomeFragment</string>
+
+    <color name="demo">#E84111</color>
+
+    <string name="title_activity_help">HelpActivity</string>
+    <string name="title_activity_help_fragment">HelpFragment</string>
+    <string name="drawer_open">drawer_open</string>
+    <string name="drawer_close">drawer_close</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_activity_store">StoreActivity</string>
+    <string name="title_activity_story">StoryActivity</string>
+    <string name="title_activity_x">XActivity</string>
+    <string name="title_activity_introduce">IntroduceActivity</string>
+    <string name="title_activity_buy">BuyActivity</string>
+    <string name="title_activity_all">AllActivity</string>
+    <string name="title_activity_second_store_fragment">SecondStoreFragment</string>
+
+</resources>
