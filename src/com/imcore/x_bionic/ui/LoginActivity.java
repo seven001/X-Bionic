@@ -61,6 +61,7 @@ public class LoginActivity extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		switch(v.getId()){
 		case R.id.but_enter:
+			
 			doLogin();
 			break;
 		case R.id.but_forgetpw:
@@ -77,7 +78,9 @@ public class LoginActivity extends Activity implements OnClickListener {
 			if (ConnectivityUtil.isOnline(this)) {
 				String inputUserName = mUser.getText().toString();
 				String inputPassword = mPassword.getText().toString();
-				
+				if(!validateInput(inputUserName ,inputPassword)){
+					return;
+				}
 				// 异步加载登录减少耗时操作，通过AsyncTask异步请求网络服务
 				new LoginTask(inputUserName, inputPassword).execute();
 			} else {
@@ -85,6 +88,20 @@ public class LoginActivity extends Activity implements OnClickListener {
 			}
 
 		}
+    private boolean validateInput(String username,String password){
+    	 if(username == null || username.equals("")){
+				Toast.makeText(this, "用户名不能为空！", Toast.LENGTH_SHORT).show();
+				mUser.requestFocus();
+				return false;
+			}
+    	if(password == null || password.equals("")){
+				Toast.makeText(this, "密码不能为空！", Toast.LENGTH_SHORT).show();
+			    mPassword.requestFocus();
+			    return false;
+			}
+		return true;
+    }
+    
 	class LoginTask extends AsyncTask<Void, Void, String>{
 		private String muser;
 		private String mpassword;
