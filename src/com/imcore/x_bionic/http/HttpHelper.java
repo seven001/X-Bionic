@@ -21,10 +21,10 @@ import android.util.Log;
 /**
  * HTTP网络访问相关方法
  * 
- * @author chen
+ * @author Li bin
  */
 public class HttpHelper {
-	public static final String DOMAIN_URL = "http://bulo2bulo.com:8080/mobile/api";
+	public static final String DOMAIN_URL = "http://bulo2bulo.com:8080/mobile/api/";
 	public static final String IMAGE_URL = "http://bulo2bulo.com:8080/";
 
 	private static final String LOG_HTTP_POST_INFO = "REQUEST";

@@ -20,7 +20,7 @@
         <activity
             android:name="com.imcore.x_bionic.ui.MainActivity"
             android:label="@string/app_name"
-            android:theme="@android:style/Theme.Light.NoTitleBar">
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
             android:name="com.imcore.x_bionic.ui.ImageLogoActivity"
@@ -34,13 +34,13 @@
         </activity>
         <activity
             android:name="com.imcore.x_bionic.ui.LoadActivity"
-            android:label="@string/title_activity_load" 
-            android:theme="@android:style/Theme.Light.NoTitleBar">
+            android:label="@string/title_activity_load"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
             android:name="com.imcore.x_bionic.ui.QQLoginActivity"
-            android:label="@string/title_activity_qqlogin" 
-            android:theme="@android:style/Theme.Light.NoTitleBar">
+            android:label="@string/title_activity_qqlogin"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
             android:name="com.imcore.x_bionic.ui.RegisterActivity"
@@ -49,18 +49,18 @@
         </activity>
         <activity
             android:name="com.imcore.x_bionic.ui.SinaLoginActivity"
-            android:label="@string/title_activity_sina_login" 
-            android:theme="@android:style/Theme.Light.NoTitleBar">
+            android:label="@string/title_activity_sina_login"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
             android:name="com.imcore.x_bionic.ui.LoginActivity"
-            android:label="@string/title_activity_login" 
-            android:theme="@android:style/Theme.Light.NoTitleBar">
+            android:label="@string/title_activity_login"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
             android:name="com.imcore.x_bionic.ui.HelpActivity"
-            android:label="@string/title_activity_help" 
-            android:theme="@android:style/Theme.Light.NoTitleBar">
+            android:label="@string/title_activity_help"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
             android:name="com.imcore.x_bionic.ui.HelpFragmentent"
@@ -69,37 +69,41 @@
         </activity>
         <activity
             android:name="com.imcore.x_bionic.ui.ProductActivity"
-            android:label="@string/title_activity_store" 
-            android:theme="@android:style/Theme.Light.NoTitleBar">
+            android:label="@string/title_activity_store"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
             android:name="com.imcore.x_bionic.ui.StoryActivity"
-            android:label="@string/title_activity_story" 
-            android:theme="@android:style/Theme.Light.NoTitleBar">
+            android:label="@string/title_activity_story"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
             android:name="com.imcore.x_bionic.ui.XActivity"
-            android:label="@string/title_activity_x" 
-            android:theme="@android:style/Theme.Light.NoTitleBar">
+            android:label="@string/title_activity_x"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
             android:name="com.imcore.x_bionic.ui.IntroduceActivity"
-            android:label="@string/title_activity_introduce" 
-            android:theme="@android:style/Theme.Light.NoTitleBar">
+            android:label="@string/title_activity_introduce"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
             android:name="com.imcore.x_bionic.ui.StoreActivity"
-            android:label="@string/title_activity_buy" 
-            android:theme="@android:style/Theme.Light.NoTitleBar">
+            android:label="@string/title_activity_buy"
+            android:theme="@style/AppBaseTheme" >
         </activity>
         <activity
             android:name="com.imcore.x_bionic.ui.AllActivity"
-            android:label="@string/title_activity_all" 
-            android:theme="@android:style/Theme.Light.NoTitleBar">
+            android:label="@string/title_activity_all"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
             android:name="com.imcore.x_bionic.ui.SecondStoreFragment"
             android:label="@string/title_activity_second_store_fragment" >
+        </activity>
+        <activity
+            android:name="com.imcore.x_bionic.ui.ProductDetailsActivity"
+            android:label="@string/title_activity_product_details" >
         </activity>
     </application>
 

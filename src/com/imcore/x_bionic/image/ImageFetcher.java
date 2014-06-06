@@ -11,18 +11,15 @@ import com.imcore.x_bionic.http.HttpHelper;
 import com.imcore.x_bionic.util.DisplayUtil;
 import com.imcore.x_bionic.util.StorageHelper;
 
+
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.ImageView;
-
-//import com.imcore.yunmingtea.http.HttpHelper;
-//import com.imcore.yunmingtea.util.DisplayUtil;
-
 /**
  * 用来下载图片，并读取图片以及显示图片
  * 
- * @author chen
+ * @author Li Bin
  */
 public class ImageFetcher {
 	private ImageCache mImageCache;
@@ -37,15 +34,24 @@ public class ImageFetcher {
 	 * 获取图片对象
 	 * 
 	 * @param url
-	 *            图片的网络路径 ,这个url也作为图片在缓存中的key
+	 *            图片的网络路�?,这个url也作为图片在缓存中的key
 	 * @param view
 	 *            显示图片用的控件
 	 */
 	public void fetch(String url, ImageView view) {
-		new ImageWorkerTask(url, view).execute();
+		@SuppressWarnings("unchecked")
+		WeakReference<ImageWorkerTask> weakTask = (WeakReference<ImageWorkerTask>) view
+				.getTag();
+		if (weakTask != null) {
+			view.setImageBitmap(null);
+		}
+		ImageWorkerTask task = new ImageWorkerTask(url, view);
+		weakTask = new WeakReference<ImageWorkerTask>(task);
+		view.setTag(weakTask);
+		task.execute();
 	}
 
-	// 图片下载异步任务内部类
+	// 图片下载异步任务内部�?
 	private class ImageWorkerTask extends AsyncTask<Void, Void, Boolean> {
 		private String url;
 		private WeakReference<ImageView> weakImageView;
@@ -56,9 +62,9 @@ public class ImageFetcher {
 			this.url = url;
 			weakImageView = new WeakReference<ImageView>(view);
 			this.reqWidth = DisplayUtil.px2Dip(view.getContext(),
-					view.getWidth());
+					view.getLayoutParams().width);
 			this.reqHeight = DisplayUtil.px2Dip(view.getContext(),
-					view.getHeight());
+					view.getLayoutParams().height);
 		}
 
 		@Override
@@ -82,19 +88,7 @@ public class ImageFetcher {
 				}
 				if (weakImageView != null) {
 					ImageView view = weakImageView.get();
-					if (view != null) {
-						// 判断当前ImageView是否是在AdapterView中被重用的
-						@SuppressWarnings("unchecked")
-						WeakReference<ImageWorkerTask> weakTask = (WeakReference<ImageWorkerTask>) view
-								.getTag();
-						if (weakTask != null) {
-							// 这里表示被重用，被重用的话，清除旧图片
-							view.setImageBitmap(null);
-						} else {
-							weakTask = new WeakReference<ImageWorkerTask>(this);
-							view.setTag(weakTask);
-						}
-
+					if (view != null && bm != null) {
 						view.setImageBitmap(bm);
 					}
 				}
@@ -108,9 +102,9 @@ public class ImageFetcher {
 	 * @param url
 	 * @return 返回true表示图片下载成功
 	 */
-	private boolean downLoadImage(String url) {
-		File imageFile = new File(StorageHelper.getAppImageDir() + "/"
-				+ url.hashCode());
+	public static boolean downLoadImage(String url) {
+		File imageFile = new File(StorageHelper.getAppImageDir(),
+				String.valueOf(url.hashCode()));
 		InputStream is = null;
 		FileOutputStream out = null;
 
@@ -132,7 +126,7 @@ public class ImageFetcher {
 				isSucc = true;
 			}
 		} catch (FileNotFoundException e) {
-			Log.e(IMAGE_FETCHER_DEBUG_TAG, "文件未找到");
+			Log.e(IMAGE_FETCHER_DEBUG_TAG, "文件未找到?");
 		} catch (IOException e) {
 			Log.e(IMAGE_FETCHER_DEBUG_TAG, e.getLocalizedMessage());
 		} finally {

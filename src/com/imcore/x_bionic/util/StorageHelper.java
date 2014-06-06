@@ -19,8 +19,8 @@ import android.util.Log;
  * @author chen
  */
 public final class StorageHelper {
-	public final static String APP_DIR_ROOT = "YunMing";
-	public final static String APP_DIR_IMAGE = "YunMing/images";
+	public final static String APP_DIR_ROOT = "X-bionic";
+	public final static String APP_DIR_IMAGE = "X-bionic/images";
 
 	private final static String LOG_DEBUG_TAG = "gh_storage";
 

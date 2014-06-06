@@ -5,8 +5,6 @@ import java.util.List;
 import java.util.Map;
 
 import com.imcore.x_bionic.R;
-import com.imcore.x_bionic.R.layout;
-import com.imcore.x_bionic.R.menu;
 import com.imcore.x_bionic.http.HttpHelper;
 import com.imcore.x_bionic.http.HttpMethod;
 import com.imcore.x_bionic.http.JsonUtil;
@@ -15,15 +13,15 @@ import com.imcore.x_bionic.http.ResponseJsonEntity;
 import com.imcore.x_bionic.image.ImageFetcher;
 import com.imcore.x_bionic.model.ThirdCategory;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.R.integer;
-import android.app.Activity;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
@@ -62,8 +60,8 @@ public class SecondStoreFragment extends Fragment {
 			int id = params[2];
 			String url = "category/products.do";
 			Map<String ,Object> map = new HashMap<String, Object>();
-			map.put("navid", navid);
-			map.put("subnavid", subnavid);
+			map.put("navId", navid);
+			map.put("subNavId", subnavid);
 			map.put("id", id);
 			RequestEntity  request = new RequestEntity(url, HttpMethod.GET, map);
 			String Json = "";
@@ -83,11 +81,23 @@ public class SecondStoreFragment extends Fragment {
 		@Override
 		protected void onPostExecute(Void result) {
 			gridV.setAdapter(new GVAdapter());
-//			gridV.setOnItemClickListener(listener);
+			gridV.setOnItemClickListener(Gdlistener);
 			super.onPostExecute(result);
 		}
 		
 	}
+	
+	private OnItemClickListener Gdlistener = new OnItemClickListener(){
+
+		@Override
+		public void onItemClick(AdapterView<?> parent, View view, int position,
+				long id) {
+			Intent intent = new Intent(getActivity(),ProductDetailsActivity.class);
+			startActivity(intent);
+		}
+		
+	};
+	
 	private class GVAdapter extends BaseAdapter{
 
 		@Override
@@ -121,7 +131,7 @@ public class SecondStoreFragment extends Fragment {
 			}
 			viewHolder.textV1.setText(list.get(position).name);
 			viewHolder.textV2.setText("￥"+ String.valueOf(list.get(position).price));
-			new ImageFetcher().fetch("http://www.bulo2bulo.com" + list.get(position).imageUrl + "L.jpg", viewHolder.imgV);
+			new ImageFetcher().fetch("http://www.bulo2bulo.com" + list.get(position).imageUrl + "_L.jpg", viewHolder.imgV);
 			
 			return view;
 		}

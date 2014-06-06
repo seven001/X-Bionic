@@ -26,8 +26,9 @@
     <string name="title_activity_story">StoryActivity</string>
     <string name="title_activity_x">XActivity</string>
     <string name="title_activity_introduce">IntroduceActivity</string>
-    <string name="title_activity_buy">BuyActivity</string>
+    <string name="title_activity_buy">X-Bionic</string>
     <string name="title_activity_all">AllActivity</string>
     <string name="title_activity_second_store_fragment">SecondStoreFragment</string>
+    <string name="title_activity_product_details">ProductDetailsActivity</string>
 
 </resources>

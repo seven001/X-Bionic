@@ -42,12 +42,6 @@ public class ProductActivity extends Activity {
 	private int groupIndex;
 	
 	@Override
-	protected void onResume() {
-		overridePendingTransition(R.anim.anim_right_in, R.anim.anim_left_out);
-		super.onResume();
-	}
-
-	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_product);
@@ -113,7 +107,7 @@ public class ProductActivity extends Activity {
 		@Override
 		protected Void doInBackground(Integer... params){
 			requestCode = params[0];
-		    url = "/category/list.do";
+		    url = "category/list.do";
 			//把参数放到map
 			Map<String, Object> args = new HashMap<String, Object>();
 			args.put("navId", params[0]);
@@ -255,16 +249,5 @@ public class ProductActivity extends Activity {
 		}
 		
 	};
-
-	@Override
-	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		if (keyCode == KeyEvent.KEYCODE_BACK) {
-			finish();
-			overridePendingTransition(R.anim.anim_left_in,
-					R.anim.anim_right_out);
-			return true;
-		}
-		return super.onKeyDown(keyCode, event);
-	}
 
 }
