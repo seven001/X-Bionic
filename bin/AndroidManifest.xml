@@ -105,6 +105,10 @@
             android:name="com.imcore.x_bionic.ui.ProductDetailsActivity"
             android:label="@string/title_activity_product_details" >
         </activity>
+        <activity
+            android:name="com.imcore.x_bionic.ui.DetailsFragment"
+            android:label="@string/title_activity_details_fragment" >
+        </activity>
     </application>
 
 </manifest>

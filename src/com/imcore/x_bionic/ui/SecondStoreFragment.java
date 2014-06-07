@@ -93,6 +93,7 @@ public class SecondStoreFragment extends Fragment {
 		public void onItemClick(AdapterView<?> parent, View view, int position,
 				long id) {
 			Intent intent = new Intent(getActivity(),ProductDetailsActivity.class);
+			intent.putExtra("id", list.get(position).id);
 			startActivity(intent);
 		}
 		

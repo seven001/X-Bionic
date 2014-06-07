@@ -30,5 +30,6 @@
     <string name="title_activity_all">AllActivity</string>
     <string name="title_activity_second_store_fragment">SecondStoreFragment</string>
     <string name="title_activity_product_details">ProductDetailsActivity</string>
+    <string name="title_activity_details_fragment">DetailsFragment</string>
 
 </resources>
