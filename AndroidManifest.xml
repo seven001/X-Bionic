@@ -93,21 +93,13 @@
             android:theme="@style/AppBaseTheme" >
         </activity>
         <activity
-            android:name="com.imcore.x_bionic.ui.AllActivity"
-            android:label="@string/title_activity_all"
-            android:theme="@android:style/Theme.Light.NoTitleBar" >
-        </activity>
-        <activity
             android:name="com.imcore.x_bionic.ui.SecondStoreFragment"
             android:label="@string/title_activity_second_store_fragment" >
         </activity>
         <activity
             android:name="com.imcore.x_bionic.ui.ProductDetailsActivity"
-            android:label="@string/title_activity_product_details" >
-        </activity>
-        <activity
-            android:name="com.imcore.x_bionic.ui.DetailsFragment"
-            android:label="@string/title_activity_details_fragment" >
+            android:label="@string/title_activity_product_details"
+            android:theme="@android:style/Theme.Light.NoTitleBar">
         </activity>
     </application>
 
