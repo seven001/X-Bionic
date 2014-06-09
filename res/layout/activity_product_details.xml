@@ -4,58 +4,183 @@
     android:layout_height="match_parent"
     tools:context=".ProductDetailsActivity" >
     
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:orientation="vertical"
-        android:background="@drawable/title_back" >
-           <Button
-               android:id="@+id/btn_account"
-               android:layout_width="40dp"
-               android:layout_height="40dp"
-               android:background="@drawable/listbutton" />
+        android:layout_height="match_parent" >
 
-           <TextView
-               android:layout_width="match_parent"
-               android:layout_height="match_parent"
-               android:gravity="center"
-               android:text="商品信息"
-               android:textColor="#d7d7d7"
-               android:textSize="22sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/title_back" >
 
-           <Button
-               android:id="@+id/btn_search"
-               android:layout_width="40dp"
-               android:layout_height="40dp"
-               android:background="@drawable/searchbtnpic" />
-       </LinearLayout>
-       <LinearLayout
-	        android:layout_width="match_parent"
-	        android:layout_height="match_parent"
-	        android:orientation="vertical">
-		    <android.support.v4.view.ViewPager
-		        android:id="@+id/vp_details"
-		        android:layout_width="match_parent"
-		        android:layout_height="170dp"
-		        android:background="#000000">
-		        <FrameLayout
-		            android:id="@+id/fl_details"
-		            android:layout_width="match_parent"
-		            android:layout_height="match_parent"/>
-		    </android.support.v4.view.ViewPager>
-		    
-		    <RelativeLayout
-		        android:layout_width="match_parent"
-	            android:layout_height="30dp">
-			    <TextView
-			        android:id="@+id/tv_details"
+                <Button
+                    android:id="@+id/btn_account"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/listbutton" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="商品信息"
+                    android:textColor="#d7d7d7"
+                    android:textSize="22sp" />
+
+                <Button
+                    android:id="@+id/btn_search"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/searchbtnpic" />
+            </RelativeLayout>
+            <ScrollView
+                android:layout_width="match_parent"
+		        android:layout_height="match_parent">
+	            <LinearLayout
 			        android:layout_width="match_parent"
-			        android:layout_height="30dp"
-			        android:textColor="#ffffff"
-			        android:background="#E04B11"
-			        android:gravity="center"
-			        android:text="坑爹产品，不解释"/>
-			    </RelativeLayout>
-	    </LinearLayout>
+			        android:layout_height="match_parent"
+			        android:orientation="vertical">
+				    <Gallery
+				        android:id="@+id/gl_detail"
+				        android:layout_width="match_parent"
+				        android:layout_height="180dp"
+				        android:background="#000000"/>
+				    
+				    <RelativeLayout
+				        android:layout_width="match_parent"
+			            android:layout_height="30dp"
+			            android:background="#E04B11">
+					    <TextView
+					        android:id="@+id/tv_details"
+					        android:layout_width="match_parent"
+					        android:layout_height="30dp"
+					        android:textColor="#ffffff"
+					        android:layout_marginLeft="7dp"
+					        android:gravity="center_vertical"
+					        android:text="坑爹产品，不解释"/>
+					</RelativeLayout>
+					<LinearLayout
+					    android:layout_width="match_parent"
+					    android:layout_height="180dp"
+					     android:background="#000000"
+					    android:orientation="vertical">
+
+						<RelativeLayout
+						    android:layout_width="match_parent"
+						    android:layout_height="45dp">
+
+						    <TextView
+						        android:id="@+id/text_name"
+						        android:layout_width="wrap_content"
+						        android:layout_height="wrap_content"
+						        android:layout_marginLeft="20dp"
+						        android:layout_marginTop="8dp"
+						        android:textColor="#ffffff"
+						        android:text="售价：" />
+
+						    <TextView
+						        android:id="@+id/text_price"
+						        android:layout_width="wrap_content"
+						        android:layout_height="wrap_content"
+						        android:layout_alignBaseline="@+id/text_name"
+						        android:layout_alignBottom="@+id/text_name"
+						        android:layout_toRightOf="@+id/text_name"
+						        android:textColor="#A90A0B"
+						        android:text="￥1000" />
+
+						    <TextView
+						        android:id="@+id/text_show"
+						        android:layout_width="wrap_content"
+						        android:layout_height="wrap_content"
+						        android:layout_alignLeft="@+id/text_price"
+						        android:layout_alignParentBottom="true"
+						        android:textColor="#cfcfcf"
+						        android:text="好好奋斗吧！骚年！" />
+
+						</RelativeLayout>
+					    <LinearLayout
+		                    android:layout_width="match_parent"
+		                    android:layout_height="45dp"
+		                    android:orientation="horizontal" >
+		
+		                    <TextView
+		                        android:id="@+id/tv2"
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="match_parent"
+		                        android:layout_marginLeft="20dp"
+		                        android:layout_marginTop="10dp"
+		                        android:text="颜色："
+		                        android:textColor="#ffffff" />
+		
+		                    <LinearLayout
+		                        android:id="@+id/ly_colorimg"
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:layout_gravity="center"
+		                        android:layout_marginLeft="10dp"
+		                        android:layout_marginTop="10dp"
+		                        android:orientation="horizontal" >
+		                    </LinearLayout>
+		                </LinearLayout>
+		                <LinearLayout
+		                    android:layout_width="match_parent"
+		                    android:layout_height="45dp"
+		                    android:orientation="horizontal" >
+		
+		                    <TextView
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="match_parent"
+		                        android:layout_marginLeft="20dp"
+		                        android:layout_marginTop="10dp"
+		                        android:text="尺码："
+		                        android:textColor="#ffffff" />
+		
+		                    <LinearLayout
+		                        android:id="@+id/ly_forcolors"
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:layout_gravity="center"
+		                        android:layout_marginLeft="10dp"
+		                        android:layout_marginTop="10dp"
+		                        android:orientation="horizontal" >
+		                    </LinearLayout>
+		                </LinearLayout>
+		                <LinearLayout
+		                    android:layout_width="match_parent"
+		                    android:layout_height="45dp"
+		                    android:orientation="horizontal" >
+		
+		                    <TextView
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="match_parent"
+		                        android:layout_marginLeft="20dp"
+		                        android:layout_marginTop="10dp"
+		                        android:text="数量："
+		                        android:textColor="#ffffff" />
+		
+		                    <LinearLayout
+		                        android:id="@+id/ly_forcount"
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:layout_gravity="center"
+		                        android:layout_marginLeft="10dp"
+		                        android:layout_marginTop="10dp"
+		                        android:orientation="horizontal" >
+		                    </LinearLayout>
+		                </LinearLayout>
+		
+					</LinearLayout>
+			    </LinearLayout>
+		     </ScrollView>
+      </LinearLayout>
+    </FrameLayout>
 
 </RelativeLayout>    
