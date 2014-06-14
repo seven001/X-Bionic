@@ -1,0 +1,67 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/allbackground"
+    android:orientation="vertical"
+    tools:context=".ProductDetailFragment" >
+
+    <FrameLayout
+        android:id="@+id/fl_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+    </FrameLayout>
+
+    <RadioGroup
+        android:id="@+id/rg_detail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="8"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/rb_share"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/share_selector"
+            android:button="@null"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:text="分享" />
+
+        <RadioButton
+            android:id="@+id/rb_shop"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/share_selector"
+            android:button="@null"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:text="购物车" />
+
+        <RadioButton
+            android:id="@+id/rb_buy"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/share_selector"
+            android:button="@null"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:text="购买" />
+
+        <RadioButton
+            android:id="@+id/rb_collection"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textColor="#ffffff"
+            android:background="@drawable/share_selector"
+            android:button="@null"
+            android:gravity="center"
+            android:text="收藏" />
+    </RadioGroup>
+</LinearLayout>

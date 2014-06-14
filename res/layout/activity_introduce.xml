@@ -39,7 +39,7 @@
 	                 android:id="@+id/img_show1"
 	                 android:layout_width="match_parent"
                      android:layout_height="match_parent"
-                     android:background="@drawable/histroy"
+                     android:background="@drawable/but_histroy"
                      android:scaleType="center"
                      android:layout_weight="1"/>
 	             <ImageView
@@ -47,28 +47,28 @@
 	                 android:layout_width="match_parent"
                      android:layout_height="match_parent"
                      android:layout_weight="1"
-                     android:background="@drawable/awareimg"
+                     android:background="@drawable/but_awareimg"
                      android:scaleType="center"/>
 	             <ImageView
 	                 android:id="@+id/img_show3"
 	                 android:layout_width="match_parent"
                      android:layout_height="match_parent"
                      android:layout_weight="1"
-                     android:background="@drawable/bionicprototype"
+                     android:background="@drawable/but_bionicprototype"
                      android:scaleType="center"/>
 	             <ImageView 
 	                 android:id="@+id/img_show4"
 	                 android:layout_width="match_parent"
                      android:layout_height="match_parent"
                      android:layout_weight="1"
-                     android:background="@drawable/productionbase"
+                     android:background="@drawable/but_productionbase"
                      android:scaleType="center"/>
 	             <ImageView 
 	                 android:id="@+id/img_show5"
 	                 android:layout_width="match_parent"
                      android:layout_height="match_parent"
                      android:layout_weight="1"
-                     android:background="@drawable/designanddevelopemt"
+                     android:background="@drawable/but_designanddevelopemt"
                      android:scaleType="center"/>
 	          </LinearLayout>
 	      </FrameLayout>

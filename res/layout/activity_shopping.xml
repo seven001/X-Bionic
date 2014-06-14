@@ -1,0 +1,102 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ShoppingActivity" >
+    
+    <FrameLayout
+        android:layout_width="match_parent"
+	    android:layout_height="match_parent">
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:orientation="vertical">
+	        <RelativeLayout
+	            android:layout_width="match_parent"
+		        android:layout_height="wrap_content">
+		    <RelativeLayout
+		        android:layout_width="match_parent"
+		        android:layout_height="53dp"
+		        android:background="@drawable/title_back">
+		        
+		        <Button
+		            android:id="@+id/but_shop_back"
+		            android:layout_width="53dp"
+		            android:layout_height="match_parent"
+		            android:layout_alignParentLeft="true"
+		            android:background="@drawable/but_back"/>
+		        
+		        <TextView
+		            android:layout_width="match_parent"
+		            android:layout_height="match_parent"
+		            android:gravity="center"
+		            android:text="我的购物车"
+		            android:textSize="18dp"
+		            android:textColor="#ffffff" />
+		
+		        <Button
+		            android:id="@+id/but_editor"
+		            android:layout_width="53dp"
+		            android:layout_height="match_parent"
+		            android:layout_alignParentRight="true"
+		            android:background="@drawable/but_pen" />
+		
+		    </RelativeLayout>
+		
+		    <RelativeLayout
+		        android:layout_width="match_parent"
+		        android:layout_height="81dp"
+		        android:layout_marginTop="50dp"
+		        android:background="@drawable/tmall_bg_furley"
+		        android:orientation="horizontal" >
+		
+		        <EditText
+		            android:id="@+id/ed_search"
+		            android:layout_width="match_parent"
+		            android:layout_height="32dp"
+		            android:layout_marginLeft="16dp"
+		            android:layout_marginRight="16dp"
+		            android:layout_marginTop="10dp"
+		            android:background="@drawable/edit_bg"
+		            android:textSize="13dp"
+		            android:hint="选填,查找达人手机号码或EMAIL获得8%的抵用券"
+		            android:ems="10" >
+		
+		            <requestFocus />
+		        </EditText>
+		
+		        <TextView
+		            android:id="@+id/textView1"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_alignLeft="@+id/ed_search"
+		            android:layout_below="@+id/ed_search"
+		            android:layout_marginTop="6dp"
+		            android:text="@string/text_for_shop"
+		            android:textColor="#F65E13" />
+		
+		        <ImageView
+		            android:id="@+id/shop_for_search"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_alignParentRight="true"
+		            android:layout_marginRight="16dp"
+		            android:layout_marginTop="6dp"
+		            android:background="@drawable/btn_search" />
+		    </RelativeLayout>
+		   </RelativeLayout>
+		   <FrameLayout
+		        android:layout_width="match_parent"
+		        android:layout_height="match_parent"
+		        android:background="@drawable/allbackground">
+			    <ListView
+			        android:id="@+id/lv_shop"
+			        android:layout_width="wrap_content"
+			        android:layout_height="328dp" />
+
+	      </FrameLayout>
+	    </LinearLayout>
+     </FrameLayout>
+
+</LinearLayout>

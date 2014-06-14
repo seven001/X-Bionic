@@ -83,7 +83,7 @@ public class HelpActivity extends FragmentActivity {
 		public void onPageSelected(int arg0) {
 			for (int i = 0; i < list.size(); i++) {
 				if (i == arg0) {
-					list.get(arg0).setImageResource(R.drawable.selectrdio);
+					list.get(arg0).setImageResource(R.drawable.yes);
 				}else {
 					list.get(i).setImageResource(R.drawable.no);
 				}

@@ -17,11 +17,16 @@ import com.imcore.x_bionic.model.SizeList;
 import com.imcore.x_bionic.model.SizeStandard;
 import com.imcore.x_bionic.model.SizeStandardDetailList;
 import com.imcore.x_bionic.model.SysColorList;
+
+import android.R.integer;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.ActionBarActivity;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Gallery;
@@ -31,7 +36,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class ProductDetailsActivity extends Activity {
+public class ProductDetailsActivity extends FragmentActivity {
 	private List<ProductDetails> list;
 	private List<SysColorList> colorLists;
 	private List<SizeList> sizeList;
@@ -43,7 +48,7 @@ public class ProductDetailsActivity extends Activity {
 	private LinearLayout ly,ls;
 	private SizeStandard sizeStandard;
 	private ListView lview;
-	private LinearLayout llScroll;
+	private LinearLayout llScroll, lycolorimg;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +57,15 @@ public class ProductDetailsActivity extends Activity {
 		//通过Intent吧值传过来
 		Intent intent = getIntent();
 		int id  = intent.getIntExtra("id", 0);
+		
+		Bundle bundle = new Bundle();
+		bundle.putInt("id", id);
+		ProductDetailFragment fragement = new ProductDetailFragment();
+		fragement.setArguments(bundle);
+		getSupportFragmentManager().beginTransaction()
+		                          .add(R.id.right_drawer, fragement).commit();
 		llScroll = (LinearLayout)findViewById(R.id.ll_scroll);
+		lycolorimg = (LinearLayout) findViewById(R.id.ly_colorimg);
 		tvname = (TextView) findViewById(R.id.tv_details);
 		tvprice = (TextView) findViewById(R.id.text_price);
 		ly = (LinearLayout)findViewById(R.id.ly_colorimg);

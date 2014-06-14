@@ -99,7 +99,55 @@
         <activity
             android:name="com.imcore.x_bionic.ui.ProductDetailsActivity"
             android:label="@string/title_activity_product_details"
-            android:theme="@android:style/Theme.Light.NoTitleBar">
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.imcore.x_bionic.ui.ProductDetailFragment"
+            android:label="@string/title_activity_product_detail_fragment"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.imcore.x_bionic.image.Imageshow2"
+            android:label="@string/title_activity_imageshow2"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.imcore.x_bionic.image.Imageshow3"
+            android:label="@string/title_activity_imageshow3"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.imcore.x_bionic.ui.ShareActivity"
+            android:label="@string/title_activity_share" >
+        </activity>
+        <activity
+            android:name="com.imcore.x_bionic.ui.CommentsActivityity"
+            android:label="@string/title_activity_comments" >
+        </activity>
+        <activity
+            android:name ="com.imcore.x_bionic.ui.ShoppingActivity"
+            android:label="@string/title_activity_shopping"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.imcore.x_bionic.ui.NewsListActivity"
+            android:label="@string/title_activity_news_list" >
+        </activity>
+        <activity
+            android:name="com.imcore.x_bionic.ui.AwardWinActivity"
+            android:label="@string/title_activity_award_win" >
+        </activity>
+        <activity
+            android:name="com.imcore.x_bionic.ui.BuyActivity"
+            android:label="@string/title_activity_buy" >
+        </activity>
+        <activity
+            android:name="com.imcore.x_bionic.ui.CollectionActivityity"
+            android:label="@string/title_activity_collection" >
+        </activity>
+        <activity
+            android:name="com.imcore.x_bionic.SearchActivity"
+            android:label="@string/title_activity_search" >
         </activity>
     </application>
 

@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/productbg"
+    android:orientation="vertical"
+    tools:context=".ShareActivity" >
+
+    <RadioGroup
+        android:id="@+id/radio_share"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="8"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/rbut_usercomment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:background="@drawable/usercomment_selector"
+            android:gravity="center" />
+
+        <RadioButton
+            android:id="@+id/rbut_news"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+             android:button="@null"
+            android:background="@drawable/productnews_selector"
+            android:gravity="center" />
+
+        <RadioButton
+            android:id="@+id/rbut_award"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+             android:button="@null"
+            android:background="@drawable/awardwinning_selector"
+            android:gravity="center" />
+    </RadioGroup>
+
+    <FrameLayout
+        android:id="@+id/fl_share_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+    </FrameLayout>
+    
+</LinearLayout>

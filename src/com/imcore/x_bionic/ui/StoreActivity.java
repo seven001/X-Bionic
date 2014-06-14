@@ -22,8 +22,14 @@ import android.support.v7.app.ActionBar.Tab;
 import android.support.v7.app.ActionBar.TabListener;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v4.app.FragmentTransaction;
+import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.Toast;
+import android.widget.AdapterView.OnItemSelectedListener;
 
 public class StoreActivity extends ActionBarActivity {
 	protected List<SecondCategory> list;
@@ -37,19 +43,22 @@ public class StoreActivity extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_store);
 		actionBar = getSupportActionBar();
+//		actionBar.hide();
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+		actionBar.setDisplayShowTitleEnabled(false);
+		actionBar.setDisplayShowHomeEnabled(false);
 		Intent intent = getIntent();
 		subNavId = intent.getIntExtra("subNavId", 0);
 		navId = intent.getIntExtra("navId", 0);
-		
 		if (HttpHelper.isNetWokrConnected(this)) {
 			new initializeList().execute(navId, subNavId);
+
 		} else {
 			Toast.makeText(StoreActivity.this, "请检查网络！", Toast.LENGTH_SHORT).show();
 		}
 		
 	}
-	
+
 	private OnPageChangeListener vplistener = new OnPageChangeListener(){
 
 		@Override
@@ -75,10 +84,10 @@ public class StoreActivity extends ActionBarActivity {
 		}
 
 		@Override
-		public Fragment getItem(int arg0) {
+		public Fragment getItem(int position) {
 			SecondStoreFragment fragment = new SecondStoreFragment();
 			Bundle bundle = new Bundle();
-			bundle.putInt("id", list.get(arg0).id);
+			bundle.putInt("id", list.get(position).id);
 			bundle.putInt("navId", navId);
 			bundle.putInt("subNavId", subNavId);
 			fragment.setArguments(bundle);

@@ -1,0 +1,77 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context=".SearchActivity" >
+    <FrameLayout
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+	        <RelativeLayout
+	            android:layout_width="match_parent"
+		        android:layout_height="wrap_content">
+			  <RelativeLayout 
+		          android:layout_width="match_parent"
+		          android:layout_height="53dp"
+		          android:background="@drawable/title_back">
+		          
+		          <TextView 
+		              android:layout_width="match_parent"
+		              android:layout_height="match_parent"
+		              android:textColor="#ffffff"
+		              android:textSize="19sp" 
+		              android:gravity="center"
+		              android:text="搜索"/>
+		          
+		          <Button 
+		              android:id="@+id/but_search_back"
+		              android:layout_width="53dp"
+		              android:layout_height="match_parent"
+		              android:background="@drawable/but_back"/>
+		
+		      </RelativeLayout>
+		
+		    <RelativeLayout
+		        android:layout_width="match_parent"
+		        android:layout_height="61dp"
+		        android:layout_marginTop="50dp"
+		        android:orientation="horizontal" >
+		
+		        <TextView
+		            android:id="@+id/ed_search"
+		            android:layout_width="match_parent"
+		            android:layout_height="32dp"
+		            android:layout_marginLeft="16dp"
+		            android:layout_marginRight="16dp"
+		            android:layout_marginTop="10dp"
+		            android:background="@drawable/edit_bg"
+		            android:textSize="13dp"
+		            android:hint="选填,查找达人手机号码或EMAIL获得8%的抵用券"/>
+		        
+		        <ImageButton 
+		            android:id="@+id/img_search"
+		            android:layout_width="wrap_content"
+		            android:layout_height="32dp"
+		            android:layout_marginLeft="16dp"
+		            android:layout_marginTop="10dp"
+		            b/>
+		        
+		        <ImageView
+		            android:id="@+id/shop_for_search"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_alignParentRight="true"
+		            android:layout_marginRight="16dp"
+		            android:layout_marginTop="6dp"
+		            android:background="@drawable/btn_search" />
+		    </RelativeLayout>
+		   </RelativeLayout>
+         </LinearLayout>
+    </FrameLayout>
+
+</RelativeLayout>
