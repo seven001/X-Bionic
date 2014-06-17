@@ -142,12 +142,14 @@
             android:label="@string/title_activity_buy" >
         </activity>
         <activity
-            android:name="com.imcore.x_bionic.ui.CollectionActivityity"
-            android:label="@string/title_activity_collection" >
+            android:name="com.imcore.x_bionic.ui.CollectionActivity"
+            android:label="@string/title_activity_collection" 
+            android:theme="@android:style/Theme.Light.NoTitleBar">
         </activity>
         <activity
-            android:name="com.imcore.x_bionic.SearchActivity"
-            android:label="@string/title_activity_search" >
+            android:name="com.imcore.x_bionic.ui.SearchActivity"
+            android:label="@string/title_activity_search" 
+            android:theme="@android:style/Theme.Light.NoTitleBar">
         </activity>
     </application>
 

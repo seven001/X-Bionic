@@ -35,7 +35,7 @@ public class ShareActivity extends Fragment implements OnCheckedChangeListener {
 		bundle.putInt("id", id);
 		fragment.setArguments(bundle);
 		getActivity().getSupportFragmentManager().beginTransaction()
-				.add(R.id.fl_share_container, fragment).commit();
+				.replace(R.id.fl_share_container, fragment).commit();
 		return view;
 	}
 

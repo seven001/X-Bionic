@@ -26,6 +26,7 @@ import com.imcore.x_bionic.http.JsonUtil;
 import com.imcore.x_bionic.http.RequestEntity;
 import com.imcore.x_bionic.http.ResponseJsonEntity;
 import com.imcore.x_bionic.util.ConnectivityUtil;
+import com.imcore.x_bionic.util.MyApplication;
 import com.imcore.x_bionic.util.TextUtil;
 import com.imcore.x_bionic.util.ToastUtil;
 
@@ -121,7 +122,7 @@ public class LoginActivity extends Activity implements OnClickListener {
 		@Override
 		protected String doInBackground(Void... params) {
 			
-			String url = "/passport/login.do";
+			String url = "passport/login.do";
 			//把参数放到map
 			Map<String, Object> args = new HashMap<String, Object>();
 			args.put("phoneNumber", muser);
@@ -154,6 +155,8 @@ public class LoginActivity extends Activity implements OnClickListener {
 				Log.i("user", jsonData);
 				String userId = JsonUtil.getJsonValueByKey(jsonData, "id");
 				String token = JsonUtil.getJsonValueByKey(jsonData, "token");
+				MyApplication.userId = Integer.parseInt(userId);
+				MyApplication.token = token;
 				// 保存userId和token
 				SharedPreferences preferences = getSharedPreferences("config",
 						MODE_PRIVATE);

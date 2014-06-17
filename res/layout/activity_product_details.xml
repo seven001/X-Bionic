@@ -89,7 +89,7 @@
 		        android:layout_alignBaseline="@+id/text_name"
 		        android:layout_alignBottom="@+id/text_name"
 		        android:layout_toRightOf="@+id/text_name"
-		        android:layout_marginLeft="20dp"
+		        android:layout_marginLeft="10dp"
 		        android:textColor="#A90A0B"
 		        android:text="￥1000" />
 
@@ -117,14 +117,14 @@
                       android:text="颜色："
                       android:textColor="#ffffff" />
 
-                  <LinearLayout
-                      android:id="@+id/ly_colorimg"
+                  <RadioGroup
+                      android:id="@+id/rg_color"
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
                       android:layout_marginLeft="10dp"
                       android:layout_marginTop="10dp"
                       android:orientation="horizontal" >
-                  </LinearLayout>
+                  </RadioGroup>
               </LinearLayout>
               <LinearLayout
                   android:layout_width="match_parent"
@@ -139,14 +139,14 @@
                       android:text="尺码："
                       android:textColor="#ffffff" />
 
-                  <LinearLayout
-                      android:id="@+id/ly_forcolors"
+                  <RadioGroup
+                      android:id="@+id/rg_size"
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
                       android:layout_marginLeft="10dp"
                       android:layout_marginTop="10dp"
                       android:orientation="horizontal" >
-                  </LinearLayout>
+                  </RadioGroup>
               </LinearLayout>
               <LinearLayout
                   android:layout_width="match_parent"
@@ -165,7 +165,7 @@
                       android:id="@+id/tv_forcount"
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
-                      android:layout_marginLeft="20dp"
+                      android:layout_marginLeft="10dp"
                       android:layout_marginTop="10dp"
                       android:background="@drawable/stocknumber"
                       android:gravity="center"

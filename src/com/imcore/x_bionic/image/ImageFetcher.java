@@ -6,16 +6,19 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.ref.WeakReference;
-
 import com.imcore.x_bionic.http.HttpHelper;
 import com.imcore.x_bionic.util.DisplayUtil;
 import com.imcore.x_bionic.util.StorageHelper;
 
-
+import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
+
+
 /**
  * 用来下载图片，并读取图片以及显示图片
  * 
@@ -38,12 +41,17 @@ public class ImageFetcher {
 	 * @param view
 	 *            显示图片用的控件
 	 */
-	public void fetch(String url, ImageView view) {
+	@SuppressLint("NewApi") 
+	public void fetch(String url, View view) {
 		@SuppressWarnings("unchecked")
 		WeakReference<ImageWorkerTask> weakTask = (WeakReference<ImageWorkerTask>) view
 				.getTag();
 		if (weakTask != null) {
-			view.setImageBitmap(null);
+			if (view instanceof ImageView) {
+				((ImageView) view).setImageBitmap(null);
+			}else {
+				view.setBackground(null);
+			}
 		}
 		ImageWorkerTask task = new ImageWorkerTask(url, view);
 		weakTask = new WeakReference<ImageWorkerTask>(task);
@@ -54,17 +62,19 @@ public class ImageFetcher {
 	// 图片下载异步任务内部�?
 	private class ImageWorkerTask extends AsyncTask<Void, Void, Boolean> {
 		private String url;
-		private WeakReference<ImageView> weakImageView;
+		private WeakReference<View> weakImageView;
 		private int reqWidth;
 		private int reqHeight;
 
-		protected ImageWorkerTask(String url, ImageView view) {
+		protected ImageWorkerTask(String url, View view) {
 			this.url = url;
-			weakImageView = new WeakReference<ImageView>(view);
-			this.reqWidth = DisplayUtil.px2Dip(view.getContext(),
-					view.getLayoutParams().width);
-			this.reqHeight = DisplayUtil.px2Dip(view.getContext(),
-					view.getLayoutParams().height);
+			weakImageView = new WeakReference<View>(view);
+			if(view instanceof ImageView) {
+				this.reqWidth = DisplayUtil.px2Dip(view.getContext(),
+						view.getLayoutParams().width);
+				this.reqHeight = DisplayUtil.px2Dip(view.getContext(),
+						view.getLayoutParams().height);
+			}
 		}
 
 		@Override
@@ -86,10 +96,15 @@ public class ImageFetcher {
 				} else {
 					bm = mImageCache.get(url);
 				}
+				Drawable drawable = mImageCache.getDrawableFormLacal(url);
 				if (weakImageView != null) {
-					ImageView view = weakImageView.get();
+					View view = weakImageView.get();
 					if (view != null && bm != null) {
-						view.setImageBitmap(bm);
+						if(view instanceof ImageView) {
+							((ImageView) view).setImageBitmap(bm);
+						}else {
+							view.setBackground(drawable);
+						}
 					}
 				}
 			}

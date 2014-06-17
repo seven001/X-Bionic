@@ -43,10 +43,10 @@ public class StoreActivity extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_store);
 		actionBar = getSupportActionBar();
-//		actionBar.hide();
+		actionBar.hide();
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-		actionBar.setDisplayShowTitleEnabled(false);
-		actionBar.setDisplayShowHomeEnabled(false);
+//		actionBar.setDisplayShowTitleEnabled(false);
+//		actionBar.setDisplayShowHomeEnabled(false);
 		Intent intent = getIntent();
 		subNavId = intent.getIntExtra("subNavId", 0);
 		navId = intent.getIntExtra("navId", 0);

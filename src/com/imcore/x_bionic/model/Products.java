@@ -10,4 +10,6 @@ public class Products {
 	public int washCareStandardId;
 	public String imageUrl;
 	public String sysColorList;
+	public String sysSize;
+	public String sysColor;
 }

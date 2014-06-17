@@ -59,8 +59,7 @@ public class LoadActivity extends Activity implements OnClickListener {
 			startActivity(intent2);
 			break;
 		case R.id.but_login:
-			Intent intent3 = new Intent(LoadActivity.this,MainActivity.class);
-//			Intent intent3 = new Intent(LoadActivity.this,LoginActivity.class);
+			Intent intent3 = new Intent(LoadActivity.this,LoginActivity.class);
 			startActivity(intent3);
 			break;
 		case R.id.but_register:

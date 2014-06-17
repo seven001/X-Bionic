@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.BitmapFactory.Options;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -189,5 +190,15 @@ public final class StorageHelper {
 		}
 		cursor.close();
 		return realPath;
+	}
+
+	public static Drawable getDrawableFromLocal(String imgName) {
+		if (!isExternalStorageReadable()) {
+			Log.d(LOG_DEBUG_TAG, "外部存储器不可读");
+			return null;
+		}
+		File imageFile = new File(getAppImageDir(), imgName);
+		Drawable drawable = Drawable.createFromPath(imageFile.getAbsolutePath());
+		return drawable;
 	}
 }
