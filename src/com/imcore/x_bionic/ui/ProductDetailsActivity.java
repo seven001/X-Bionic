@@ -3,9 +3,6 @@ package com.imcore.x_bionic.ui;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import javax.security.auth.PrivateCredentialPermission;
-
 import com.imcore.x_bionic.R;
 import com.imcore.x_bionic.http.HttpHelper;
 import com.imcore.x_bionic.http.HttpMethod;
@@ -22,15 +19,11 @@ import com.imcore.x_bionic.model.SizeStandardDetailList;
 import com.imcore.x_bionic.model.Storage;
 import com.imcore.x_bionic.model.SysColorList;
 import com.imcore.x_bionic.util.MyApplication;
-
-import android.R.integer;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -63,8 +56,8 @@ public class ProductDetailsActivity extends FragmentActivity implements OnChecke
 	private int[] color;
 	private int[] size;
 	private boolean add;
-	private int colorIndex = 19;
-	private int sizeIndex = 19;
+	private int colorIndex = 5656;
+	private int sizeIndex = 5656;
 	private RadioGroup ly,ls;
 	private int productQuantityId;
 	private SizeStandard sizeStandard;
@@ -182,7 +175,6 @@ public class ProductDetailsActivity extends FragmentActivity implements OnChecke
 							ViewGroup.LayoutParams.WRAP_CONTENT);
 					layoutParams.height = 47;
 					layoutParams.width = 47;
-					layoutParams.leftMargin = 100;
 					layoutParams.setMargins(80, 80, 80, 80);
 					radiobut.setLayoutParams(layoutParams);
 					radiobut.setId(ly.hashCode() + i);
@@ -228,7 +220,7 @@ public class ProductDetailsActivity extends FragmentActivity implements OnChecke
 
 		@Override
 		protected Integer doInBackground(Integer... params) {
-			String url = "shoppingcart/list.do";
+			String url = "product/quantity/get.do";
 			Map<String, Object> map = new HashMap<String, Object>();
 			map.put("id", params[0]);
 			map.put("colorId", params[1]);
@@ -253,7 +245,7 @@ public class ProductDetailsActivity extends FragmentActivity implements OnChecke
 		}
 		@Override
 		protected void onPostExecute(Integer result) {
-//			tvcount.setText("(库存"+String.valueOf(storage.qty)+"件)");
+			tvcount.setText("(库存"+storage.qty+"件)");
 			if(add){
 				new AddShop().execute(productQuantityId);
 			}
@@ -291,7 +283,8 @@ public class ProductDetailsActivity extends FragmentActivity implements OnChecke
 				builder.setTitle("购物车").setMessage("添加成功")
 						.setPositiveButton("确定", null).create().show();
 			}else{
-				Toast.makeText(ProductDetailsActivity.this, "请检查网络！", Toast.LENGTH_SHORT).show();
+				builder.setTitle("购物车").setMessage("服务器出错啦！")
+				.setPositiveButton("确定", null).create().show();
 			}
 			
 			super.onPostExecute(result);
@@ -487,7 +480,7 @@ public class ProductDetailsActivity extends FragmentActivity implements OnChecke
 				Log.i("size", sizeList.get(i).size);
 			}
 		}
-		if(colorIndex != 19 && sizeIndex != 19){
+		if(colorIndex != 5656 && sizeIndex != 5656){
 			if (HttpHelper.isNetWokrConnected(this)) {
 				new AddToShop().execute(id, colorLists.get(colorIndex).id,
 						sizeList.get(sizeIndex).id);

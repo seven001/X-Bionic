@@ -9,7 +9,7 @@
         android:id="@+id/textView1"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@drawable/title_back"
+        android:background="@drawable/topnav"
         android:gravity="center"
         android:text="注册"
         android:textColor="#FFFFFF"

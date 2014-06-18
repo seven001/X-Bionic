@@ -139,7 +139,8 @@
         </activity>
         <activity
             android:name="com.imcore.x_bionic.ui.BuyActivity"
-            android:label="@string/title_activity_buy" >
+            android:label="@string/title_activity_buy" 
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
             android:name="com.imcore.x_bionic.ui.CollectionActivity"

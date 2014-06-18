@@ -133,9 +133,9 @@ public class MainActivity extends Activity implements OnItemClickListener,
 			long id) {
 		Intent intent = null;
 		switch (position) {
-		case 4:
-//			intent = new Intent(MainActivity.this, LoginActivity.class);
-//			startActivity(intent);
+		case 5:
+			intent = new Intent(MainActivity.this, ShoppingActivity.class);
+			startActivity(intent);
 			break;
 
 		default:

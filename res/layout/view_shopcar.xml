@@ -8,7 +8,7 @@
     <LinearLayout
         android:id="@+id/layout_linear_shop_cart"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -85,16 +85,17 @@
                 android:layout_toRightOf="@id/tv_shop_cart_price_name"
                 android:singleLine="true"
                 android:text="dfdf"
-                android:textColor="#A90A0B" />
+                android:textColor="#D9450E" />
 
             <TextView
                 android:id="@+id/tv_shop_cart_count"
-                android:layout_width="80dp"
-                android:layout_height="28dp"
+                android:layout_width="56dp"
+                android:layout_height="24dp"
                 android:layout_alignLeft="@id/tv_shop_cart_price_name"
                 android:layout_below="@id/tv_shop_cart_price_name"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="9dp"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="6.3dp"
+                android:background="@drawable/enterbound"
                 android:gravity="center"
                 android:singleLine="true"
                 android:text="dfdf"
@@ -105,7 +106,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_shop_cart_price_name"
-                android:layout_marginRight="-30dp"
+                android:layout_marginRight="-20dp"
                 android:layout_toLeftOf="@+id/tv_shop_cart_count"
                 android:background="@drawable/but_left_icon"
                 android:visibility="gone" />
@@ -115,8 +116,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_shop_cart_price_name"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="7dp"
                 android:layout_toRightOf="@id/tv_shop_cart_count"
                 android:gravity="center"
                 android:singleLine="true"
@@ -128,7 +129,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_shop_cart_price_name"
-                android:layout_marginLeft="-15dp"
+                android:layout_marginLeft="-10dp"
                 android:layout_toRightOf="@+id/tv_shop_cart_count"
                 android:background="@drawable/but_right_icon"
                 android:visibility="gone" />
