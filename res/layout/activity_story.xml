@@ -1,35 +1,41 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/allbackground"
     tools:context=".StoryActivity" >
 
     <RelativeLayout 
-	          android:layout_width="match_parent"
-	          android:layout_height="53dp"
-	          android:background="@drawable/topnav">
-	          
-	          <TextView 
-	              android:layout_width="match_parent"
-	              android:layout_height="match_parent"
-	              android:textColor="#ffffff"
-	              android:textSize="22sp" 
-	              android:gravity="center"
-	              android:text="达人故事"/>
-	          
-	          <Button 
-	              android:id="@+id/but_drawer"
-	              android:layout_width="53dp"
-	              android:layout_height="match_parent"
-	              android:background="@drawable/listbutton"/>
-	
-	          <Button
-	              android:id="@+id/but_reach"
-	              android:layout_width="53dp"
-	              android:layout_height="match_parent"
-	              android:layout_alignParentRight="true"
-	              android:background="@drawable/btn_search" />
-	          
-	      </RelativeLayout>
+          android:layout_width="match_parent"
+          android:layout_height="53dp"
+          android:background="@drawable/topnav">
+          
+          <TextView 
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:textColor="#ffffff"
+              android:textSize="22sp" 
+              android:gravity="center"
+              android:text="达人故事"/>
+          
+          <Button 
+              android:id="@+id/but_drawer"
+              android:layout_width="53dp"
+              android:layout_height="match_parent"
+              android:background="@drawable/listbutton"/>
 
-</RelativeLayout>
+          <Button
+              android:id="@+id/but_reach"
+              android:layout_width="53dp"
+              android:layout_height="match_parent"
+              android:layout_alignParentRight="true"
+              android:background="@drawable/btn_search" />
+      </RelativeLayout>
+      <ListView
+          android:id="@+id/list_story"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+      </ListView>
+
+</LinearLayout>

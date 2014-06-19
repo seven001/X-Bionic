@@ -4,25 +4,62 @@
     android:layout_height="match_parent"
     tools:context=".XActivity" >
 
-    <RelativeLayout 
-         android:layout_width="match_parent"
-         android:layout_height="53dp"
-         android:background="@drawable/topnav">
-         <Button
-            android:id="@+id/but_back_x"
-            android:layout_width="wrap_content"
+     <FrameLayout
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout 
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/but_back"/>
-         
-         <TextView 
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             android:textColor="#ffffff"
-             android:textSize="22sp" 
-             android:gravity="center"
-             android:text="X的活动"/>
-         
-     </RelativeLayout>
-     
+            android:orientation="vertical" >
+	        <RelativeLayout
+	            android:layout_width="match_parent"
+		        android:layout_height="wrap_content">
+			  <RelativeLayout 
+		          android:layout_width="match_parent"
+		          android:layout_height="53dp"
+		          android:background="@drawable/topnav">
+		          
+		          <TextView 
+		              android:layout_width="match_parent"
+		              android:layout_height="match_parent"
+		              android:textColor="#ffffff"
+		              android:textSize="19sp" 
+		              android:gravity="center"
+		              android:text="搜索"/>
+		          
+		          <Button 
+		              android:id="@+id/but_back_x"
+		              android:layout_width="53dp"
+		              android:layout_height="match_parent"
+		              android:background="@drawable/but_back"/>
+		
+		      </RelativeLayout>
+		
+		    <RelativeLayout
+		        android:layout_width="match_parent"
+		        android:layout_height="52dp"
+		        android:layout_marginTop="53dp"
+		        android:orientation="horizontal"
+		        android:background="@drawable/tmall_bg_furley">
+		        
+		        <Button 
+		            android:id="@+id/but_forfilter"
+		            android:layout_width="wrap_content"
+		            android:layout_height="33dp"
+		            android:layout_marginLeft="16dp"
+		            android:layout_marginTop="8dp"
+		            android:background="@drawable/but_forfilter"/>
+		        
+		    </RelativeLayout>
+		   </RelativeLayout>
+		    <ListView
+		        android:id="@+id/x_activity"
+		        android:layout_width="match_parent"
+		        android:layout_height="match_parent"
+		        android:background="@drawable/allbackground">
+    		</ListView>
+         </LinearLayout>
+    </FrameLayout>
 
 </RelativeLayout>

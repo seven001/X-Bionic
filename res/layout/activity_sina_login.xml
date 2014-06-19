@@ -6,43 +6,44 @@
     tools:context=".SinaLoginActivity" >
 
     <Button
-        android:id="@+id/but_sina_login"
+        android:id="@+id/but_sinasso"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="14dp"
-        android:background="@drawable/sharebuyselectbutton"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/but_sina"
         android:text="微博认证OAUTH2.0" />
 
     <Button
-        android:id="@+id/but_sina_load"
+        android:id="@+id/but_sinacancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/but_sina_login"
-        android:layout_alignBottom="@+id/but_sina_login"
-        android:layout_marginLeft="20dp"
-        android:layout_toRightOf="@+id/but_sina_login"
-        android:background="@drawable/sharebuyselectbutton"
-        android:text="单点登录sso" />
-
-    <Button
-        android:id="@+id/but_sina_cancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/but_sina_login"
-        android:layout_below="@+id/but_sina_login"
+        android:layout_alignLeft="@+id/but_sinasso"
+        android:layout_below="@+id/but_sinasso"
         android:layout_marginTop="10dp"
-        android:background="@drawable/sharebuyselectbutton"
+        android:background="@drawable/but_sina"
         android:text="注销" />
 
     <TextView
+        android:id="@+id/showToken"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/but_sina_cancel"
+        android:layout_below="@+id/but_sinacancel"
         android:layout_marginTop="10dp"
         android:text="@string/text_sina" />
+
+    <Button
+        android:id="@+id/but_sinaload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/but_sinacancel"
+        android:layout_marginLeft="22dp"
+        android:layout_toRightOf="@+id/but_sinasso"
+        android:background="@drawable/but_sina"
+        android:text="单点登录sso" />
+
 
 </RelativeLayout>
