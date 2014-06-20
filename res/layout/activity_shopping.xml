@@ -32,8 +32,8 @@
 		            android:layout_height="match_parent"
 		            android:gravity="center"
 		            android:text="我的购物车"
-		            android:textSize="18dp"
-		            android:textColor="#ffffff" />
+		            android:textSize="22dp"
+		            android:textColor="#d7d7d7" />
 		
 		        <Button
 		            android:id="@+id/but_editor"

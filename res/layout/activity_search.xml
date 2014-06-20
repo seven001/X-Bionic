@@ -23,8 +23,8 @@
 		          <TextView 
 		              android:layout_width="match_parent"
 		              android:layout_height="match_parent"
-		              android:textColor="#ffffff"
-		              android:textSize="19sp" 
+		              android:textColor="#d7d7d7"
+		              android:textSize="22sp" 
 		              android:gravity="center"
 		              android:text="搜索"/>
 		          
@@ -39,27 +39,26 @@
 		    <RelativeLayout
 		        android:layout_width="match_parent"
 		        android:layout_height="61dp"
-		        android:layout_marginTop="50dp"
-		        android:orientation="horizontal" >
+		        android:background="@drawable/tmall_bg_furley"
+		        android:layout_marginTop="53dp">
 		
 		        <TextView
 		            android:id="@+id/ed_search"
 		            android:layout_width="match_parent"
-		            android:layout_height="32dp"
+		            android:layout_height="35dp"
 		            android:layout_marginLeft="16dp"
 		            android:layout_marginRight="16dp"
 		            android:layout_marginTop="10dp"
 		            android:background="@drawable/edit_bg"
-		            android:textSize="13dp"
-		            android:hint="选填,查找达人手机号码或EMAIL获得8%的抵用券"/>
+		            android:textSize="13dp"/>
 		        
-		        <ImageButton 
+		        <Button 
 		            android:id="@+id/img_search"
-		            android:layout_width="wrap_content"
+		            android:layout_width="67dp"
 		            android:layout_height="32dp"
-		            android:layout_marginLeft="16dp"
-		            android:layout_marginTop="10dp"
-		            />
+		            android:layout_marginLeft="18dp"
+		            android:layout_marginTop="12dp"
+		            android:background="@drawable/dropdown"/>
 		        
 		        <ImageView
 		            android:id="@+id/shop_for_search"
@@ -67,10 +66,35 @@
 		            android:layout_height="wrap_content"
 		            android:layout_alignParentRight="true"
 		            android:layout_marginRight="16dp"
-		            android:layout_marginTop="6dp"
+		            android:layout_marginTop="8dp"
 		            android:background="@drawable/btn_search" />
+
+		        <EditText
+		            android:id="@+id/edit_search"
+		            android:layout_width="wrap_content"
+		            android:layout_height="35dp"
+		            android:layout_alignTop="@+id/ed_search"
+		            android:layout_toLeftOf="@+id/shop_for_search"
+		            android:layout_toRightOf="@+id/img_search"
+		            android:background="@null"
+		            android:ems="10"
+		            android:maxLines="1"
+		            android:inputType="text"
+		            android:hint="请输入产品关键字" />
+
 		    </RelativeLayout>
 		   </RelativeLayout>
+	        <GridView
+	            android:id="@+id/gd_search"
+	            android:layout_width="wrap_content"
+	            android:layout_height="match_parent" 
+	            android:verticalSpacing="5dp"
+	            android:horizontalSpacing="5dp"
+	            android:layout_marginLeft="5dp"
+	            android:layout_marginRight="5dp"
+	            android:numColumns="3">
+	        </GridView>
+
          </LinearLayout>
     </FrameLayout>
 

@@ -125,7 +125,7 @@
             android:label="@string/title_activity_comments" >
         </activity>
         <activity
-            android:name ="com.imcore.x_bionic.ui.ShoppingActivity"
+            android:name="com.imcore.x_bionic.ui.ShoppingActivity"
             android:label="@string/title_activity_shopping"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
@@ -139,18 +139,31 @@
         </activity>
         <activity
             android:name="com.imcore.x_bionic.ui.BuyActivity"
-            android:label="@string/title_activity_buy" 
+            android:label="@string/title_activity_buy"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
             android:name="com.imcore.x_bionic.ui.CollectionActivity"
-            android:label="@string/title_activity_collection" 
-            android:theme="@android:style/Theme.Light.NoTitleBar">
+            android:label="@string/title_activity_collection"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
             android:name="com.imcore.x_bionic.ui.SearchActivity"
-            android:label="@string/title_activity_search" 
-            android:theme="@android:style/Theme.Light.NoTitleBar">
+            android:label="@string/title_activity_search" >
+        </activity>
+        <activity
+            android:name="com.imcore.x_bionic.SettingActivity"
+            android:label="@string/title_activity_setting"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.imcore.x_bionic.ArchActivity"
+            android:label="@string/title_activity_arch"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.imcore.x_bionic.MasterActivity"
+            android:label="@string/title_activity_master" >
         </activity>
     </application>
 

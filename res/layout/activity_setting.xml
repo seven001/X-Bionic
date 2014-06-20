@@ -1,0 +1,80 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context=".SettingActivity" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:background="@drawable/topnav" >
+
+        <Button
+            android:id="@+id/but_back_set"
+            android:layout_width="53dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/but_back" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="设置账户"
+            android:textColor="#d7d7d7"
+            android:textSize="22sp" />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_below="@+id/relativeLayout1"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:hint="  手机号码（必填）"
+        android:background="@drawable/email_find_posswd" >
+    </EditText>
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_below="@+id/editText1"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:hint="  登陆密码（必填）"
+        android:background="@drawable/email_find_posswd"
+        android:ems="10" >
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_below="@+id/editText2"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:hint="  用户邮箱（必填）"
+        android:background="@drawable/email_find_posswd"
+        android:ems="10" />
+
+    <Button
+        android:id="@+id/but_sina_login"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_below="@+id/editText3"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/but_bg"
+        android:text="创建账户"
+        android:textColor="#ffffff"
+        android:textSize="18sp" />
+
+</RelativeLayout>

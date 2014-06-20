@@ -43,5 +43,8 @@
     <string name="title_activity_award_win">AwardWinActivity</string>
     <string name="title_activity_collection">CollectionActivity</string>
     <string name="title_activity_search">SearchActivity</string>
+    <string name="title_activity_setting">SettingActivity</string>
+    <string name="title_activity_arch">ArchActivity</string>
+    <string name="title_activity_master">MasterActivity</string>
 
 </resources>

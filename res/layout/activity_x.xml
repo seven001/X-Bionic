@@ -23,10 +23,10 @@
 		          <TextView 
 		              android:layout_width="match_parent"
 		              android:layout_height="match_parent"
-		              android:textColor="#ffffff"
-		              android:textSize="19sp" 
+		              android:textColor="#d7d7d7"
+		              android:textSize="22sp" 
 		              android:gravity="center"
-		              android:text="搜索"/>
+		              android:text="X的活动"/>
 		          
 		          <Button 
 		              android:id="@+id/but_back_x"

@@ -16,9 +16,9 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
-import android.view.KeyEvent;
-import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -28,28 +28,123 @@ import android.widget.BaseAdapter;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.Button;
 import android.widget.ExpandableListView;
+import android.widget.ListView;
 import android.widget.ExpandableListView.OnGroupClickListener;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class ProductActivity extends Activity {
+public class ProductActivity extends Activity implements OnClickListener, OnItemClickListener {
+	public DrawerLayout mDrawerLayout;
+	public ActionBarDrawerToggle mDrawerToggle;
+	public ListView mDrawerList;
+	public List<String> list2;
 	private ExpandableListView mExpListView;
 	private List<Integer> list;
 	private List<Category> mfirstimg;
 	private List<Category> mscondimg;
 	private List<List<Category>> childList;
 	private int groupIndex;
+	private Button butback,butdrawer;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_product);
+		initializeList();
+		inDrawerLayout();
 		mExpListView = (ExpandableListView) findViewById(R.id.expend_lt);
 		mExpListView.setGroupIndicator(null);
+		butback = (Button) findViewById(R.id.but_productsreach);
+		butback.setOnClickListener(this);
+		butdrawer = (Button) findViewById(R.id.but_drawer_product);
+		butdrawer.setOnClickListener(this);
 		getImage();
 	}
 	
+	private void inDrawerLayout() {
+		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_lt2);
+		View view = getLayoutInflater().inflate(R.layout.activity_home_head,
+				null);
+		mDrawerList = (ListView) findViewById(R.id.left_drawer_2);
+		mDrawerList.addHeaderView(view);
+		mDrawerList.setAdapter(new LtAdapter());
+		mDrawerList.setOnItemClickListener(this);
+		initialDrawerListener();
+	}
+	
+	private void initialDrawerListener() {
+		mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
+				R.drawable.ic_drawer, R.string.drawer_open,
+				R.string.drawer_close) {
+			@Override
+			public void onDrawerOpened(View drawerView) {
+				super.onDrawerOpened(drawerView);
+			}
+
+			@Override
+			public void onDrawerClosed(View drawerView) {
+				super.onDrawerClosed(drawerView);
+			}
+		};
+		mDrawerLayout.setDrawerListener(mDrawerToggle);
+	}
+	
+	private void initializeList() {
+		list2 = new ArrayList<String>();
+		list2.add("您的订购");
+		list2.add("账户设置");
+		list2.add("达人申请");
+		list2.add("部落社区");
+		list2.add("购物车");
+		list2.add("订阅信息");
+		list2.add("分享设置");
+	}
+	
+	private class LtAdapter extends BaseAdapter {
+
+		@Override
+		public int getCount() {
+			return list2.size();
+		}
+
+		@Override
+		public Object getItem(int position) {
+			return list2.get(position);
+		}
+
+		@Override
+		public long getItemId(int position) {
+			return position;
+		}
+
+		@Override
+		public View getView(int position, View convertView, ViewGroup parent) {
+			convertView = getLayoutInflater().inflate(
+					R.layout.activity_home_item, null);
+			TextView textView = (TextView) convertView
+					.findViewById(R.id.tv_home_item);
+			textView.setText(list2.get(position));
+			return convertView;
+		}
+	};
+
+	@Override
+	public void onItemClick(AdapterView<?> parent, View view, int position,
+			long id) {
+		Intent intent = null;
+		switch (position) {
+		case 5:
+			intent = new Intent(this, ShoppingActivity.class);
+			startActivity(intent);
+			break;
+
+		default:
+			break;
+		}
+		mDrawerLayout.closeDrawer(mDrawerList);
+	}
+
 	private OnGroupClickListener onGroupClickListener = new OnGroupClickListener(){
 
 		@Override
@@ -248,6 +343,19 @@ public class ProductActivity extends Activity {
 			return false;
 		}
 		
+	}
+
+	@Override
+	public void onClick(View v) {
+		switch(v.getId()){
+		case R.id.but_drawer_product:
+			mDrawerLayout.openDrawer(mDrawerList);
+			break;
+		case R.id.but_productsreach:
+			Intent intent = new Intent(this,SearchActivity.class);
+			startActivity(intent);
+			break;
+		}
 	};
 
 }

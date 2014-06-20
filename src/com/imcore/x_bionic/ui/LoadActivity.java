@@ -19,7 +19,7 @@ import android.widget.ImageButton;
 
 public class LoadActivity extends Activity implements OnClickListener {
 	private Button butqq, butsian, butlogin, butregister;
-	private ImageButton buthelp,butserve;
+	private ImageButton buthelp,butsearch;
 	
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {

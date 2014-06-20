@@ -64,7 +64,7 @@ public class ProductDetailsActivity extends FragmentActivity implements OnChecke
 	private ListView lview;
 	private LinearLayout llScroll;
 	private EditText edcount;
-	private Button butshop;
+	private Button butshop,butsearch,butback;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -73,7 +73,6 @@ public class ProductDetailsActivity extends FragmentActivity implements OnChecke
 		//通过Intent吧值传过来
 		Intent intent = getIntent();
 		id  = intent.getIntExtra("id", 0);
-		
 		Bundle bundle = new Bundle();
 		bundle.putInt("id", id);
 		ProductDetailFragment fragement = new ProductDetailFragment();
@@ -82,6 +81,10 @@ public class ProductDetailsActivity extends FragmentActivity implements OnChecke
 		                          .add(R.id.right_drawer, fragement).commit();
 		edcount = (EditText) findViewById(R.id.tv_forcount);
 		butshop = (Button) findViewById(R.id.but_shopping);
+		butsearch = (Button) findViewById(R.id.but_detailsearch);
+		butback = (Button) findViewById(R.id.btn_detailback);
+		butsearch.setOnClickListener(this);
+		butback.setOnClickListener(this);
 		butshop.setOnClickListener(this);
 		llScroll = (LinearLayout)findViewById(R.id.ll_scroll);
 		tvcount = (TextView) findViewById(R.id.tv_count);
@@ -501,6 +504,13 @@ public class ProductDetailsActivity extends FragmentActivity implements OnChecke
 			} else {
 				Toast.makeText(this, "网络不给力啊！", Toast.LENGTH_SHORT).show();
 			}
+			break;
+		case R.id.but_detailsearch:
+			Intent intent = new Intent(this,SearchActivity.class);
+			startActivity(intent);
+			break;
+		case R.id.btn_detailback:
+			finish();
 			break;
 		}
 	}

@@ -12,8 +12,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.webkit.CookieManager;
-import android.webkit.CookieSyncManager;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -78,6 +76,7 @@ public class SinaLoginActivity extends Activity implements OnClickListener {
 		public void onWeiboException(WeiboException arg0) {
 			Toast.makeText(SinaLoginActivity.this, arg0.getMessage(),
 					Toast.LENGTH_LONG).show();
+			Toast.makeText(SinaLoginActivity.this, "认证成功！", Toast.LENGTH_SHORT).show();
 		}
 	}
 	
@@ -93,10 +92,18 @@ public class SinaLoginActivity extends Activity implements OnClickListener {
 			startActivity(intent);
 			break;
 		case R.id.but_sinacancel:
-			if(handler != null){
-				CookieSyncManager.createInstance(getApplicationContext());
-				 CookieManager.getInstance().removeAllCookie(); 
-			}
+			new Thread(new Runnable() {
+
+				@Override
+				public void run() {
+					try {
+						Thread.sleep(2000);
+						Toast.makeText(SinaLoginActivity.this, "退出成功！", Toast.LENGTH_SHORT).show();
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
+			}).start();
 			break;
 		}
 	}

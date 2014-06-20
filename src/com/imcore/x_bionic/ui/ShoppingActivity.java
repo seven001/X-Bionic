@@ -216,6 +216,7 @@ public class ShoppingActivity extends Activity implements OnClickListener {
 				@Override
 				public void onClick(View v) {
 					new DeleteTask().execute(shopcarList.get(mPosition).id);
+					mAdapter = new MoveAdapter();
 				}
 			});
 			viewHolder.ivSub.setOnClickListener(new OnClickListener() {
@@ -286,6 +287,7 @@ public class ShoppingActivity extends Activity implements OnClickListener {
 				mAllprice -= shopcarList.get(mPosition).qty* pList.get(mPosition).price;
 				tvaccount.setText("￥"+mAllprice);
 				if(shopcarList != null){
+					new ShopcarList().execute();
 					AlertDialog.Builder builder = new AlertDialog.Builder(ShoppingActivity.this);
 					builder.setTitle("购物车").setMessage("已删除成功！")
 					.setPositiveButton("确定", null).create().show();

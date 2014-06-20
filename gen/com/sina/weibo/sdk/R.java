@@ -255,25 +255,25 @@ public final class R {
 		public static final int abc_textfield_searchview_holo_light = 0x7f020054;
 		public static final int abc_textfield_searchview_right_holo_dark = 0x7f020055;
 		public static final int abc_textfield_searchview_right_holo_light = 0x7f020056;
-		public static final int com_sina_weibo_sdk_button_blue = 0x7f02007a;
-		public static final int com_sina_weibo_sdk_button_grey = 0x7f02007b;
-		public static final int com_sina_weibo_sdk_login_button_with_account_text = 0x7f02007c;
-		public static final int com_sina_weibo_sdk_login_button_with_frame_logo = 0x7f02007d;
-		public static final int com_sina_weibo_sdk_login_button_with_original_logo = 0x7f02007e;
-		public static final int ic_com_sina_weibo_sdk_button_blue_focused = 0x7f020092;
-		public static final int ic_com_sina_weibo_sdk_button_blue_normal = 0x7f020093;
-		public static final int ic_com_sina_weibo_sdk_button_blue_pressed = 0x7f020094;
-		public static final int ic_com_sina_weibo_sdk_button_grey_focused = 0x7f020095;
-		public static final int ic_com_sina_weibo_sdk_button_grey_normal = 0x7f020096;
-		public static final int ic_com_sina_weibo_sdk_button_grey_pressed = 0x7f020097;
-		public static final int ic_com_sina_weibo_sdk_login_button_with_frame_logo_focused = 0x7f020098;
-		public static final int ic_com_sina_weibo_sdk_login_button_with_frame_logo_normal = 0x7f020099;
-		public static final int ic_com_sina_weibo_sdk_login_button_with_frame_logo_pressed = 0x7f02009a;
-		public static final int ic_com_sina_weibo_sdk_login_with_account_text_focused = 0x7f02009b;
-		public static final int ic_com_sina_weibo_sdk_login_with_account_text_normal = 0x7f02009c;
-		public static final int ic_com_sina_weibo_sdk_login_with_account_text_pressed = 0x7f02009d;
-		public static final int ic_com_sina_weibo_sdk_login_with_text = 0x7f02009e;
-		public static final int ic_com_sina_weibo_sdk_logo = 0x7f02009f;
+		public static final int com_sina_weibo_sdk_button_blue = 0x7f02007b;
+		public static final int com_sina_weibo_sdk_button_grey = 0x7f02007c;
+		public static final int com_sina_weibo_sdk_login_button_with_account_text = 0x7f02007d;
+		public static final int com_sina_weibo_sdk_login_button_with_frame_logo = 0x7f02007e;
+		public static final int com_sina_weibo_sdk_login_button_with_original_logo = 0x7f02007f;
+		public static final int ic_com_sina_weibo_sdk_button_blue_focused = 0x7f020097;
+		public static final int ic_com_sina_weibo_sdk_button_blue_normal = 0x7f020098;
+		public static final int ic_com_sina_weibo_sdk_button_blue_pressed = 0x7f020099;
+		public static final int ic_com_sina_weibo_sdk_button_grey_focused = 0x7f02009a;
+		public static final int ic_com_sina_weibo_sdk_button_grey_normal = 0x7f02009b;
+		public static final int ic_com_sina_weibo_sdk_button_grey_pressed = 0x7f02009c;
+		public static final int ic_com_sina_weibo_sdk_login_button_with_frame_logo_focused = 0x7f02009d;
+		public static final int ic_com_sina_weibo_sdk_login_button_with_frame_logo_normal = 0x7f02009e;
+		public static final int ic_com_sina_weibo_sdk_login_button_with_frame_logo_pressed = 0x7f02009f;
+		public static final int ic_com_sina_weibo_sdk_login_with_account_text_focused = 0x7f0200a0;
+		public static final int ic_com_sina_weibo_sdk_login_with_account_text_normal = 0x7f0200a1;
+		public static final int ic_com_sina_weibo_sdk_login_with_account_text_pressed = 0x7f0200a2;
+		public static final int ic_com_sina_weibo_sdk_login_with_text = 0x7f0200a3;
+		public static final int ic_com_sina_weibo_sdk_logo = 0x7f0200a4;
 	}
 	public static final class id {
 		public static final int action_bar = 0x7f05001c;
@@ -364,7 +364,7 @@ public final class R {
 		public static final int abc_popup_menu_item_layout = 0x7f030014;
 		public static final int abc_search_dropdown_item_icons_2line = 0x7f030015;
 		public static final int abc_search_view = 0x7f030016;
-		public static final int support_simple_spinner_dropdown_item = 0x7f030038;
+		public static final int support_simple_spinner_dropdown_item = 0x7f03003b;
 	}
 	public static final class string {
 		public static final int abc_action_bar_home_description = 0x7f0a0001;

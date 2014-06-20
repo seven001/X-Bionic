@@ -1,0 +1,110 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/allbackground"
+    tools:context=".ArchActivity" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:background="@drawable/topnav" >
+
+        <Button
+            android:id="@+id/but_back_arch"
+            android:layout_width="53dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/but_back" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="提货券"
+            android:textColor="#d7d7d7"
+            android:textSize="22sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/relativeLayout1"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="20dp"
+        android:text="使用提货券"
+        android:textColor="#ffffff"
+        android:textSize="16dp" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="120dp"
+        android:layout_height="32dp"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="20dp"
+        android:background="#ffffff"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/but_arch"
+        android:layout_width="72dp"
+        android:layout_height="35dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="40dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/but_account"
+        android:text="提交"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editText1"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/editText1"
+        android:layout_marginTop="11dp"
+        android:text="此订单最大可使用提货券金额：1589元.您当前剩余提货券金额：0.0元"
+        android:textColor="#ffffff"
+        android:textSize="12dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView2"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="11dp"
+        android:text="温馨提示："
+        android:textColor="#E04B11"
+        android:textSize="14dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_below="@+id/textView3"
+        android:text="系统提货券一旦使用，不进行退回操作且该订单不再享受返抵用券"
+        android:textColor="#E04B11"
+        android:textSize="14dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editText1"
+        android:layout_toRightOf="@+id/editText1"
+        android:layout_marginBottom="6dp"
+        android:layout_marginLeft="6dp"
+        android:text="元"
+        android:textColor="#ffffff"
+        android:textSize="16dp" />
+
+</RelativeLayout>

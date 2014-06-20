@@ -1,5 +1,6 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_lt2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000000"
@@ -20,19 +21,19 @@
 	          <TextView 
 	              android:layout_width="match_parent"
 	              android:layout_height="match_parent"
-	              android:textColor="#ffffff"
+	              android:textColor="#d7d7d7"
 	              android:textSize="22sp" 
 	              android:gravity="center"
 	              android:text="产品购买"/>
 	          
 	          <Button 
-	              android:id="@+id/but_drawer_store"
+	              android:id="@+id/but_drawer_product"
 	              android:layout_width="53dp"
 	              android:layout_height="match_parent"
 	              android:background="@drawable/listbutton"/>
 	
 	          <Button
-	              android:id="@+id/but_reach"
+	              android:id="@+id/but_productsreach"
 	              android:layout_width="53dp"
 	              android:layout_height="match_parent"
 	              android:layout_alignParentRight="true"
@@ -50,5 +51,12 @@
 	       </FrameLayout>
 	     </LinearLayout>
 	 </FrameLayout>
-
-</RelativeLayout>
+	 <ListView
+        android:id="@+id/left_drawer_2"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:choiceMode="singleChoice"
+        android:background="@drawable/allbackground"/>
+	 
+</android.support.v4.widget.DrawerLayout>

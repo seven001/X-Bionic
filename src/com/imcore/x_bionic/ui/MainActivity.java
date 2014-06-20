@@ -6,9 +6,12 @@ import java.util.List;
 import com.imcore.x_bionic.R;
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -26,15 +29,25 @@ public class MainActivity extends Activity implements OnItemClickListener,
 	public ActionBarDrawerToggle mDrawerToggle;
 	public ListView mDrawerList;
 	public List<String> list;
-	private Button btnAccount;
+	private Button btnAccount,butsearch;
 	private Button butproduct, butstory, butactivity, butIntroducte;
 
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		if(keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0){
+			 dialog();  
+		     return true;
+		}
+		return true;
+	}
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		initializeList();
 		inDrawerLayout();
+		butsearch = (Button) findViewById(R.id.bm_sreach);
 		butproduct = (Button) findViewById(R.id.but_product);
 		butstory = (Button) findViewById(R.id.but_story);
 		butactivity = (Button) findViewById(R.id.but_activity);
@@ -43,6 +56,7 @@ public class MainActivity extends Activity implements OnItemClickListener,
 		butstory.setOnClickListener(this);
 		butactivity.setOnClickListener(this);
 		butIntroducte.setOnClickListener(this);
+		butsearch.setOnClickListener(this);
 
 		btnAccount = (Button) findViewById(R.id.but_drawer);
 		btnAccount.setOnClickListener(new OnClickListener() {
@@ -170,7 +184,33 @@ public class MainActivity extends Activity implements OnItemClickListener,
 			intent = new Intent(this,IntroduceActivity.class);
 			startActivity(intent);
 			break;
+		case R.id.bm_sreach:
+			intent = new Intent(this,SearchActivity.class);
+			startActivity(intent);
+			break;
 		}
 	}
+	
+	protected void dialog() {  
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);  
+        builder.setMessage("确定退出登陆吗?");  
+        builder.setTitle("X-Bionic");  
+        builder.setPositiveButton("确认",  
+        new android.content.DialogInterface.OnClickListener() {  
+            @Override  
+            public void onClick(DialogInterface dialog, int which) {  
+                dialog.dismiss();  
+                android.os.Process.killProcess(android.os.Process.myPid());  
+            }
+        });  
+        builder.setNegativeButton("取消",  
+        new android.content.DialogInterface.OnClickListener() {  
+            @Override  
+            public void onClick(DialogInterface dialog, int which) {  
+                dialog.dismiss();  
+            }  
+        });  
+        builder.create().show();  
+	}  
 
 }

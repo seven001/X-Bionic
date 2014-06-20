@@ -23,7 +23,7 @@
 	          <TextView 
 	              android:layout_width="match_parent"
 	              android:layout_height="match_parent"
-	              android:textColor="#ffffff"
+	              android:textColor="#d7d7d7"
 	              android:textSize="22sp" 
 	              android:gravity="center"
 	              android:text="部落平方"/>
@@ -35,7 +35,7 @@
 	              android:background="@drawable/listbutton"/>
 	
 	          <Button
-	              android:id="@+id/but_reach"
+	              android:id="@+id/bm_sreach"
 	              android:layout_width="53dp"
 	              android:layout_height="match_parent"
 	              android:layout_alignParentRight="true"

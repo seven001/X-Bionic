@@ -12,8 +12,9 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="22dp"
         android:background="@drawable/but_sina"
+        android:textColor="#d7d7d7"
         android:text="微博认证OAUTH2.0" />
 
     <Button
@@ -23,6 +24,7 @@
         android:layout_alignLeft="@+id/but_sinasso"
         android:layout_below="@+id/but_sinasso"
         android:layout_marginTop="10dp"
+        android:textColor="#d7d7d7"
         android:background="@drawable/but_sina"
         android:text="注销" />
 
@@ -33,6 +35,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/but_sinacancel"
         android:layout_marginTop="10dp"
+        android:textColor="#cfcfcf"
         android:text="@string/text_sina" />
 
     <Button
@@ -41,6 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/but_sinacancel"
         android:layout_marginLeft="22dp"
+        android:textColor="#d7d7d7"
         android:layout_toRightOf="@+id/but_sinasso"
         android:background="@drawable/but_sina"
         android:text="单点登录sso" />

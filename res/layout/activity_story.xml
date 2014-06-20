@@ -14,7 +14,7 @@
           <TextView 
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:textColor="#ffffff"
+              android:textColor="#d7d7d7"
               android:textSize="22sp" 
               android:gravity="center"
               android:text="达人故事"/>

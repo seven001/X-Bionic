@@ -25,18 +25,21 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemSelectedListener;
 
-public class StoreActivity extends ActionBarActivity {
+public class StoreActivity extends ActionBarActivity implements OnClickListener {
 	protected List<SecondCategory> list;
 	private ActionBar actionBar;
 	private ViewPager viewPager;
 	private int subNavId;
 	private int navId;
+	private Button butback,butsearch;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +53,10 @@ public class StoreActivity extends ActionBarActivity {
 		Intent intent = getIntent();
 		subNavId = intent.getIntExtra("subNavId", 0);
 		navId = intent.getIntExtra("navId", 0);
+		butback = (Button) findViewById(R.id.btn_stores_back);
+		butback.setOnClickListener(this);
+		butsearch = (Button) findViewById(R.id.btn_storesearch);
+		butsearch.setOnClickListener(this);
 		if (HttpHelper.isNetWokrConnected(this)) {
 			new initializeList().execute(navId, subNavId);
 
@@ -166,6 +173,19 @@ public class StoreActivity extends ActionBarActivity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.store, menu);
 		return true;
+	}
+
+	@Override
+	public void onClick(View v) {
+		switch(v.getId()){
+		case R.id.btn_stores_back:
+			finish();
+			break;
+		case R.id.btn_storesearch:
+			Intent intent = new Intent(this,SearchActivity.class);
+			startActivity(intent);
+			break;
+		}
 	}
 
 }
