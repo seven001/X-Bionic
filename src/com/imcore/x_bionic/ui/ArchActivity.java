@@ -1,4 +1,9 @@
-package com.imcore.x_bionic;
+package com.imcore.x_bionic.ui;
+
+import com.imcore.x_bionic.R;
+import com.imcore.x_bionic.R.id;
+import com.imcore.x_bionic.R.layout;
+import com.imcore.x_bionic.R.menu;
 
 import android.os.Bundle;
 import android.app.Activity;

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/collect_list" >
+
+        <ImageView
+            android:id="@+id/img_collect"
+            android:layout_width="75dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="6dp"
+            android:scaleType="fitXY"
+            android:background="@drawable/img_12" />
+
+        <TextView
+            android:id="@+id/tv_collect_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/img_collect"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="11dp"
+            android:layout_toRightOf="@+id/img_collect"
+            android:text="123"
+            android:textColor="#ffffff"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/tv_collect_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_collect_title"
+            android:layout_below="@+id/tv_collect_title"
+            android:layout_marginTop="3dp"
+            android:text="123"
+            android:textColor="#cfcfcf"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_collect_color"
+            android:layout_below="@+id/tv_collect_color"
+            android:layout_marginTop="3dp"
+            android:text="单价："
+            android:textColor="#cfcfcf"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/tv_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/img_collect"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="8dp"
+            android:text="123"
+            android:textColor="#ffffff"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/tv_collectaccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView3"
+            android:layout_alignBottom="@+id/textView3"
+            android:layout_toRightOf="@+id/textView3"
+            android:text="0.0元"
+            android:textColor="#E04B11"
+            android:textSize="16dp" />
+
+        <Button
+            android:id="@+id/but_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tv_collectaccount"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/tv_collect_color"
+            android:background="@drawable/but_shop"
+            android:layout_marginRight="8dp"
+            android:text="刪除"
+            android:textColor="#ffffff" />
+
+    </RelativeLayout>
+
+</LinearLayout>

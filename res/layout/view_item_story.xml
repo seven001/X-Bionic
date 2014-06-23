@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/img_story"
             android:layout_alignLeft="@+id/tv_story_title"
-            android:layout_marginBottom="23dp"
+            android:layout_marginBottom="17dp"
             android:text="123"
             android:textColor="#919191"
             android:textSize="12dp" />

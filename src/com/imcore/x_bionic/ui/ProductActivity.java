@@ -134,6 +134,18 @@ public class ProductActivity extends Activity implements OnClickListener, OnItem
 			long id) {
 		Intent intent = null;
 		switch (position) {
+		case 2:
+			intent = new Intent(this, SetActivity.class);
+			startActivity(intent);
+			break;
+		case 3:
+			intent = new Intent(this, MasterActivity.class);
+			startActivity(intent);
+			break;
+		case 4:
+			intent = new Intent(this, MainActivity.class);
+			startActivity(intent);
+			break;
 		case 5:
 			intent = new Intent(this, ShoppingActivity.class);
 			startActivity(intent);

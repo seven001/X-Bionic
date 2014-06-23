@@ -1,6 +1,5 @@
 package com.imcore.x_bionic.ui;
 
-import com.imcore.x_bionic.ArchActivity;
 import com.imcore.x_bionic.R;
 import com.imcore.x_bionic.R.layout;
 import com.imcore.x_bionic.R.menu;
@@ -18,7 +17,7 @@ import android.widget.TextView;
 public class BuyActivity extends Activity implements OnClickListener {
 	private float mAllprice;
 	private TextView tvprice,tvprice2;
-	private Button butshop,butcommit,butback,butarch2;
+	private Button butshop,butcommit,butback,butarch2,butarch;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +30,12 @@ public class BuyActivity extends Activity implements OnClickListener {
 		tvprice.setText("￥"+mAllprice);
 		tvprice2.setText("￥"+mAllprice);
 		
+		butarch = (Button) findViewById(R.id.but_arch);
 		butarch2 = (Button) findViewById(R.id.but_arch2);
 		butback = (Button) findViewById(R.id.but_back_buy);
 		butcommit = (Button) findViewById(R.id.but_commit);
 		butshop = (Button) findViewById(R.id.but_goshop);
+		butarch.setOnClickListener(this);
 		butback.setOnClickListener(this);
 		butcommit.setOnClickListener(this);
 		butshop.setOnClickListener(this);
@@ -66,6 +67,10 @@ public class BuyActivity extends Activity implements OnClickListener {
 			break;
 		case R.id.but_arch2:
 			intent = new Intent(this,ArchActivity.class);
+			startActivity(intent);
+			break;
+		case R.id.but_arch:
+			intent = new Intent(this,ArchsActivity.class);
 			startActivity(intent);
 			break;
 		}

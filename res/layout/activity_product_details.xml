@@ -62,12 +62,13 @@
 	        android:text="坑爹产品，不解释"/>
 
 	    <Button
-	        android:id="@+id/but_shopping"
+	        android:id="@+id/but_collect"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:background="@drawable/but_shop"
 	        android:layout_alignParentRight="true"
 	        android:layout_marginRight="11dp"
+	        android:layout_marginTop= "3dp"
 	        android:text="添加收藏"
 	        android:textColor="#ffffff" />
 

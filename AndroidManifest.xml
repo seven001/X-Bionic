@@ -152,18 +152,34 @@
             android:label="@string/title_activity_search" >
         </activity>
         <activity
-            android:name="com.imcore.x_bionic.SettingActivity"
+            android:name="com.imcore.x_bionic.ui.SettingActivity"
             android:label="@string/title_activity_setting"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
-            android:name="com.imcore.x_bionic.ArchActivity"
+            android:name="com.imcore.x_bionic.ui.ArchActivity"
             android:label="@string/title_activity_arch"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
-            android:name="com.imcore.x_bionic.MasterActivity"
-            android:label="@string/title_activity_master" >
+            android:name="com.imcore.x_bionic.ui.MasterActivity"
+            android:label="@string/title_activity_master"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.imcore.x_bionic.ui.AddressActivity"
+            android:label="@string/title_activity_master"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.imcore.x_bionic.ui.SetActivity"
+            android:label="@string/title_activity_master"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.imcore.x_bionic.ui.ArchsActivity"
+            android:label="@string/title_activity_archs" 
+            android:theme="@android:style/Theme.Light.NoTitleBar">
         </activity>
     </application>
 

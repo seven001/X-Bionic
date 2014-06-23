@@ -1,0 +1,117 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/allbackground"
+    tools:context=".ArchsActivity" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:background="@drawable/topnav" >
+
+        <Button
+            android:id="@+id/but_backarch2"
+            android:layout_width="53dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/but_back" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="抵用券"
+            android:textColor="#d7d7d7"
+            android:textSize="22sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_arch2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/relativeLayout1"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="30dp"
+        android:text="您当前可的抵用券："
+        android:textColor="#ffffff"
+        android:textSize="16dp" />
+
+    <Button
+        android:id="@+id/but_arch2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tv_arch2"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/tv_arch2"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/but_shop"
+        android:text="选择使用"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:id="@+id/tv_a1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_arch2"
+        android:layout_below="@+id/tv_arch2"
+        android:layout_marginTop="22dp"
+        android:text="200元抵用券"
+        android:textColor="#ffffff"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/tv_a2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_a1"
+        android:layout_below="@+id/tv_a1"
+        android:layout_marginTop="22dp"
+        android:text="300元抵用券"
+        android:textColor="#ffffff"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/tv_a3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_a2"
+        android:layout_below="@+id/tv_a2"
+        android:layout_marginTop="22dp"
+        android:text="500元抵用券"
+        android:textColor="#ffffff"
+        android:textSize="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tv_a1"
+        android:layout_alignBottom="@+id/tv_a1"
+        android:layout_alignRight="@+id/but_arch2"
+        android:text="2  张"
+        android:textColor="#ffffff"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tv_a3"
+        android:layout_alignBottom="@+id/tv_a3"
+        android:layout_alignRight="@+id/but_arch2"
+        android:text="2  张"
+        android:textColor="#ffffff"
+        android:textSize="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tv_a2"
+        android:layout_alignBottom="@+id/tv_a2"
+        android:layout_alignLeft="@+id/textView1"
+        android:text="2  张"
+        android:textColor="#ffffff"
+        android:textSize="16dp" />
+
+</RelativeLayout>

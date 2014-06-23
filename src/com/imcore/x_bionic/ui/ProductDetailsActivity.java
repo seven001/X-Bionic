@@ -64,7 +64,7 @@ public class ProductDetailsActivity extends FragmentActivity implements OnChecke
 	private ListView lview;
 	private LinearLayout llScroll;
 	private EditText edcount;
-	private Button butshop,butsearch,butback;
+	private Button butshop,butsearch,butback,butcollect;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +83,8 @@ public class ProductDetailsActivity extends FragmentActivity implements OnChecke
 		butshop = (Button) findViewById(R.id.but_shopping);
 		butsearch = (Button) findViewById(R.id.but_detailsearch);
 		butback = (Button) findViewById(R.id.btn_detailback);
+		butcollect = (Button) findViewById(R.id.but_collect);
+		butcollect.setOnClickListener(this);
 		butsearch.setOnClickListener(this);
 		butback.setOnClickListener(this);
 		butshop.setOnClickListener(this);
@@ -294,6 +296,42 @@ public class ProductDetailsActivity extends FragmentActivity implements OnChecke
 		}
 	};
 	
+	private class GetCollect extends AsyncTask<Integer, Void, Integer> {
+
+		@Override
+		protected Integer doInBackground(Integer... params) {
+			String url = "user/favorite/add.do";
+			Map<String, Object> map = new HashMap<String, Object>();
+			map.put("userId", MyApplication.userId);
+			map.put("token", MyApplication.token);
+			map.put("type", 1);
+			map.put("productId", params[0]);
+			RequestEntity entity = new RequestEntity(url, HttpMethod.POST, map);
+			String json = "";
+			int status = 0;
+			try {
+				json = HttpHelper.execute(entity);
+				ResponseJsonEntity responseJsonEntity = ResponseJsonEntity.fromJSON(json);
+				status = responseJsonEntity.getStatus();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return status;
+		}
+		@Override
+		protected void onPostExecute(Integer result) {
+			AlertDialog.Builder builder = new AlertDialog.Builder(ProductDetailsActivity.this);
+			if (result == 200) {
+				builder.setTitle("购物车").setMessage("添加成功")
+						.setPositiveButton("确定", null).create().show();
+			} else {
+				builder.setTitle("购物车").setMessage("服务器出错啦！")
+						.setPositiveButton("确定", null).create().show();
+			}
+			super.onPostExecute(result);
+		}
+	}
+	
 	private class getSizeInfo extends AsyncTask<Integer, Void, Void> {
 
 
@@ -498,9 +536,29 @@ public class ProductDetailsActivity extends FragmentActivity implements OnChecke
 	public void onClick(View v) {
 		switch(v.getId()){
 		case R.id.but_shopping:
+			add = true;
+			AlertDialog.Builder builder = new AlertDialog.Builder(this);
+			if(edcount.getText().toString() == null||edcount.getText().toString().equals("")) {
+				
+				builder.setTitle("X-bionic").setMessage("请输入商品数量")
+						.setPositiveButton("确定", null).create().show();
+				add = false;
+				return;
+			}else if (colorIndex==5656) {
+				builder.setTitle("X-bionic").setMessage("请选择颜色")
+						.setPositiveButton("确定", null).create().show();
+				add = false;
+				return;
+			}else if (sizeIndex==5656) {
+				builder.setTitle("X-bionic").setMessage("请选择尺寸")
+						.setPositiveButton("确定", null).create().show();
+				add = false;
+				return;
+			}
 			if (HttpHelper.isNetWokrConnected(this)) {
 				new AddShop().execute(id, colorLists.get(colorIndex).id,
 						sizeList.get(sizeIndex).id);
+				edcount.setText("");
 			} else {
 				Toast.makeText(this, "网络不给力啊！", Toast.LENGTH_SHORT).show();
 			}
@@ -508,6 +566,9 @@ public class ProductDetailsActivity extends FragmentActivity implements OnChecke
 		case R.id.but_detailsearch:
 			Intent intent = new Intent(this,SearchActivity.class);
 			startActivity(intent);
+			break;
+		case R.id.but_collect:
+			new GetCollect().execute(id);
 			break;
 		case R.id.btn_detailback:
 			finish();

@@ -12,7 +12,7 @@
         android:background="@drawable/topnav" >
 
         <Button
-            android:id="@+id/but_back_arch"
+            android:id="@+id/but_backmaseter"
             android:layout_width="53dp"
             android:layout_height="match_parent"
             android:background="@drawable/but_back" />
@@ -45,6 +45,7 @@
         android:background="@drawable/expert_edit1" >
 
         <TextView
+            android:id="@+id/tv_maseter1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
@@ -52,8 +53,22 @@
             android:text="姓氏:"
             android:textSize="17dp" />
 
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/tv_maseter1"
+            android:layout_alignBottom="@+id/tv_maseter1"
+            android:layout_toRightOf="@+id/tv_maseter1"
+            android:background="@null"
+            android:ems="10"
+            android:inputType="textPersonName" >
+
+            <requestFocus />
+        </EditText>
+
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/tv_maseter2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -63,25 +78,118 @@
             android:textSize="17dp" />
 
         <TextView
+            android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/textView1"
-            android:layout_below="@+id/textView1"
+            android:layout_alignLeft="@+id/tv_maseter2"
+            android:layout_below="@+id/tv_maseter2"
             android:layout_marginTop="81dp"
             android:text="Email:"
             android:textSize="17dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/editText1"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView1"
+            android:layout_alignBottom="@+id/textView1"
+            android:layout_toRightOf="@+id/textView1"
+            android:background="@null"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/relativeLayout3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/relativeLayout2"
+        android:layout_alignRight="@+id/relativeLayout2"
         android:layout_below="@+id/relativeLayout2"
         android:layout_marginTop="16dp"
         android:background="@drawable/expert_edit2" >
-        <TextView 
+
+        <TextView
+            android:id="@+id/textView2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="10dp"
+            android:text="手机号码:"
+            android:textSize="17dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView2"
+            android:layout_alignBottom="@+id/textView2"
+            android:layout_toRightOf="@+id/textView2"
+            android:background="@null"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView2"
+            android:layout_below="@+id/textView2"
+            android:layout_marginTop="25dp"
+            android:text="推荐人手机号码:"
+            android:textSize="17dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView3"
+            android:layout_alignBottom="@+id/textView3"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@+id/textView3"
+            android:background="@null"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="42dp"
+        android:layout_alignLeft="@+id/relativeLayout4"
+        android:layout_alignRight="@+id/relativeLayout4"
+        android:layout_below="@+id/relativeLayout4"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/but_go_enter"
+        android:text="确认提交"
+        android:textColor="#ffffff"
+        android:textSize="17dp" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/relativeLayout3"
+        android:layout_alignRight="@+id/relativeLayout3"
+        android:layout_below="@+id/relativeLayout3"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/expert_edit3" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="10dp"
+            android:text="资历"
+            android:textSize="17dp" />
     </RelativeLayout>
 
 </RelativeLayout>

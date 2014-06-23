@@ -46,5 +46,6 @@
     <string name="title_activity_setting">SettingActivity</string>
     <string name="title_activity_arch">ArchActivity</string>
     <string name="title_activity_master">MasterActivity</string>
+    <string name="title_activity_archs">ArchsActivity</string>
 
 </resources>

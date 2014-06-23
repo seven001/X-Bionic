@@ -20,6 +20,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -57,6 +58,7 @@ public class ShoppingActivity extends Activity implements OnClickListener {
 		butback.setOnClickListener(this);
 		new ShopcarList().execute();
 	}
+	
 	private class ShopcarList extends AsyncTask<Void , Void , Integer>{
 
 		@Override
@@ -100,11 +102,15 @@ public class ShoppingActivity extends Activity implements OnClickListener {
 		@Override
 		protected void onPostExecute(Integer result) {
 			tvaccount.setText("￥"+mAllprice);
-			adapter = new MyAdapter();
-			listshop.setAdapter(adapter);
+			if(adapter == null){
+				adapter = new MyAdapter();
+				listshop.setAdapter(adapter);
+			}else{
+			}
 			super.onPostExecute(result);
 		}
 	}
+	
 	private class MyAdapter extends BaseAdapter{
 
 		@Override
@@ -145,7 +151,7 @@ public class ShoppingActivity extends Activity implements OnClickListener {
 			viewHolder.tvName.setText(pList.get(position).name);
 			viewHolder.tvColor.setText("颜色 ：" +String.valueOf(mcolor.get(position).color));
 			viewHolder.tvSize.setText("尺码 ："+String.valueOf(msize.get(position).size));
-			viewHolder.tvPrice.setText("￥："+String.valueOf(pList.get(position).price));
+			viewHolder.tvPrice.setText("￥："+String.valueOf(pList.get(position).price*shopcarList.get(position).qty));
 			viewHolder.tvCount.setText(String.valueOf(shopcarList.get(position).qty));
 			return view;
 		}
@@ -203,7 +209,7 @@ public class ShoppingActivity extends Activity implements OnClickListener {
 			viewHolder.tvName.setText(pList.get(position).name);
 			viewHolder.tvColor.setText("颜色 ：" +String.valueOf(mcolor.get(position).color));
 			viewHolder.tvSize.setText("尺码 ："+String.valueOf(msize.get(position).size));
-			viewHolder.tvPrice.setText("￥："+String.valueOf(pList.get(position).price));
+			viewHolder.tvPrice.setText("￥："+String.valueOf(pList.get(position).price*shopcarList.get(position).qty));
 			viewHolder.tvCount.setText(String.valueOf(shopcarList.get(position).qty));
 			viewHolder.ivSub.setVisibility(View.VISIBLE);
 			viewHolder.ivPlub.setVisibility(View.VISIBLE);
@@ -215,8 +221,16 @@ public class ShoppingActivity extends Activity implements OnClickListener {
 				
 				@Override
 				public void onClick(View v) {
-					new DeleteTask().execute(shopcarList.get(mPosition).id);
-					mAdapter = new MoveAdapter();
+					AlertDialog.Builder builder = new AlertDialog.Builder(ShoppingActivity.this);
+					builder.setTitle("确认删除？").setPositiveButton("确定",
+							new DialogInterface.OnClickListener() {
+								
+								@Override
+								public void onClick(DialogInterface arg0, int arg1) {
+									new DeleteTask().execute(shopcarList.get(mPosition).id);
+								}
+					});
+					builder.setNegativeButton("取消", null).create().show();					
 				}
 			});
 			viewHolder.ivSub.setOnClickListener(new OnClickListener() {

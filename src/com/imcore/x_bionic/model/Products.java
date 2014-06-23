@@ -12,4 +12,5 @@ public class Products {
 	public String sysColorList;
 	public String sysSize;
 	public String sysColor;
+	public String createDate;
 }
