@@ -153,7 +153,7 @@ public class CollectionActivity extends Activity {
 				view = getLayoutInflater().inflate(R.layout.view_collection_item, null);
 				viewholder = new ViewHolder();
 				viewholder.texttitle = (TextView) view.findViewById(R.id.tv_collect_title);
-				viewholder.textcolor = (TextView) view.findViewById(R.id.tv_collect_color);
+//				viewholder.textcolor = (TextView) view.findViewById(R.id.tv_collect_color);
 				viewholder.textprice = (TextView) view.findViewById(R.id.tv_collectaccount);
 				viewholder.texttime = (TextView) view.findViewById(R.id.tv_data);
 				viewholder.imgphoto = (ImageView) view.findViewById(R.id.img_collect);
