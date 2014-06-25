@@ -46,6 +46,7 @@
         android:layout_below="@+id/textView1"
         android:layout_marginTop="20dp"
         android:background="#ffffff"
+        android:inputType="number"
         android:ems="10" >
 
         <requestFocus />

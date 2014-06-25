@@ -92,7 +92,7 @@ public class ProductActivity extends Activity implements OnClickListener, OnItem
 	
 	private void initializeList() {
 		list2 = new ArrayList<String>();
-		list2.add("您的订购");
+		list2.add("您的收藏");
 		list2.add("账户设置");
 		list2.add("达人申请");
 		list2.add("部落社区");
@@ -134,6 +134,10 @@ public class ProductActivity extends Activity implements OnClickListener, OnItem
 			long id) {
 		Intent intent = null;
 		switch (position) {
+		case 1:
+			intent = new Intent(this,CollectionActivity.class);
+			startActivity(intent);
+			break;
 		case 2:
 			intent = new Intent(this, SetActivity.class);
 			startActivity(intent);

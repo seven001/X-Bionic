@@ -4,7 +4,7 @@ public class Products {
 	public int id;
 	public String name;
 	public int categoryId;
-	public int price;
+	public double price;
 	public String serialNo;
 	public String description;
 	public int washCareStandardId;

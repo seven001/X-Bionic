@@ -34,9 +34,9 @@ import android.widget.TextView;
 public class ShoppingActivity extends Activity implements OnClickListener {
 	private ListView listshop;
 	private List<ShoppingCar> shopcarList;
-	private List<Products> pList= new ArrayList<Products>();;
-	private List<SysColorList> mcolor= new ArrayList<SysColorList>();
-	private List<SizeList> msize= new ArrayList<SizeList>();
+	private List<Products> pList;
+	private List<SysColorList> mcolor;
+	private List<SizeList> msize;
 	private Button buteditor, butaccount,butback;
 	private TextView tvaccount;
 	private float mAllprice = 0;
@@ -63,20 +63,25 @@ public class ShoppingActivity extends Activity implements OnClickListener {
 
 		@Override
 		protected Integer doInBackground(Void... params) {
+			pList = new ArrayList<Products>();
+			mcolor = new ArrayList<SysColorList>();
+			msize = new ArrayList<SizeList>();
 			String url = "shoppingcart/list.do";
 			Map<String, Object> map = new HashMap<String, Object>();
 			map.put("token", MyApplication.token);
 			map.put("userId", MyApplication.userId);
 			RequestEntity entity = new RequestEntity(url, HttpMethod.POST, map);
 			String json = "";
+			int status = 0;
 			try {
 				json = HttpHelper.execute(entity);
 				ResponseJsonEntity responseJsonEntity = ResponseJsonEntity
 						.fromJSON(json);
-				String data = responseJsonEntity.getData();
+				status = responseJsonEntity.getStatus();
 				if(responseJsonEntity.getStatus()== 200){
-					
+					String data = responseJsonEntity.getData();
 					shopcarList = JsonUtil.toObjectList(data, ShoppingCar.class);
+					System.out.println("shopcar size:" + shopcarList.size());
 					for (ShoppingCar shoppingCart : shopcarList) {
 						Products product = JsonUtil.toObject(
 								shoppingCart.product, Products.class);
@@ -91,22 +96,24 @@ public class ShoppingActivity extends Activity implements OnClickListener {
 						mcolor.add(sysColor);
 						msize.add(size);
 					}
-					
 				}
 				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			return null;
+			return status;
 		}
 		@Override
 		protected void onPostExecute(Integer result) {
-			tvaccount.setText("￥"+mAllprice);
-			if(adapter == null){
-				adapter = new MyAdapter();
-				listshop.setAdapter(adapter);
-			}else{
-			}
+				tvaccount.setText("￥"+mAllprice);
+				if(adapter == null){
+					adapter = new MyAdapter();
+					listshop.setAdapter(adapter);
+				}else{
+					listshop.setAdapter(mAdapter);
+					mAdapter.notifyDataSetChanged();
+					listshop.invalidateViews();
+				}
 			super.onPostExecute(result);
 		}
 	}
@@ -115,6 +122,7 @@ public class ShoppingActivity extends Activity implements OnClickListener {
 
 		@Override
 		public int getCount() {
+			System.out.println("myadapter size:" + shopcarList.size());
 			return shopcarList.size();
 		}
 
@@ -184,10 +192,11 @@ public class ShoppingActivity extends Activity implements OnClickListener {
 
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
-			View view = convertView;
+			View view = null;
 			ViewHolder viewHolder = null;
-			if(view == null){
+//			if(convertView == null){
 				view = getLayoutInflater().inflate(R.layout.view_shopcar, null);
+				convertView = view;
 				viewHolder = new ViewHolder();
 				viewHolder.ivRemove = (ImageView) view.findViewById(R.id.iv_shop_cart_remove);
 				viewHolder.ivpic = (ImageView) view.findViewById(R.id.iv_shop_cart);
@@ -198,10 +207,11 @@ public class ShoppingActivity extends Activity implements OnClickListener {
 				viewHolder.tvCount = (TextView) view.findViewById(R.id.tv_shop_cart_count);
 				viewHolder.ivSub = (ImageView) view.findViewById(R.id.iv_shop_cart_sub);
 				viewHolder.ivPlub = (ImageView) view.findViewById(R.id.iv_shop_cart_plub);
-				view.setTag(viewHolder);
-			}else{
-				viewHolder = (ViewHolder) view.getTag();
-			}
+//				view.setTag(viewHolder);
+//			}else{
+//				view = convertView;
+//				viewHolder = (ViewHolder) view.getTag();
+//			}
 			ImageFetcher fetcher = new ImageFetcher();
 			String imgurl = "http://bulo2bulo.com";
 			viewHolder.ivRemove.setBackgroundResource(R.drawable.remove_icon);
@@ -227,7 +237,8 @@ public class ShoppingActivity extends Activity implements OnClickListener {
 								
 								@Override
 								public void onClick(DialogInterface arg0, int arg1) {
-									new DeleteTask().execute(shopcarList.get(mPosition).id);
+									System.out.println("p:" + mPosition);
+									new DeleteTask(mPosition).execute(shopcarList.get(mPosition).id);
 								}
 					});
 					builder.setNegativeButton("取消", null).create().show();					
@@ -275,8 +286,12 @@ public class ShoppingActivity extends Activity implements OnClickListener {
 		private int status;
 		private int mPosition;
 
+		public DeleteTask(int mPosition2) {
+			this.mPosition = mPosition2;
+		}
 		@Override
 		protected Integer doInBackground(Integer... params) {
+			
 			String url = "shoppingcart/delete.do";
 			Map<String , Object> map = new HashMap<String, Object>();
 			map.put("userId", MyApplication.userId);
@@ -301,10 +316,25 @@ public class ShoppingActivity extends Activity implements OnClickListener {
 				mAllprice -= shopcarList.get(mPosition).qty* pList.get(mPosition).price;
 				tvaccount.setText("￥"+mAllprice);
 				if(shopcarList != null){
-					new ShopcarList().execute();
+//					new ShopcarList().execute();
+					System.out.println("mP:" + mPosition);
+					shopcarList.remove(mPosition);
+					mcolor.remove(mPosition);
+					msize.remove(mPosition);
+					pList.remove(mPosition);
 					AlertDialog.Builder builder = new AlertDialog.Builder(ShoppingActivity.this);
 					builder.setTitle("购物车").setMessage("已删除成功！")
 					.setPositiveButton("确定", null).create().show();
+					mAllprice -= shopcarList.get(mPosition).qty* pList.get(mPosition).price;
+					
+//					BaseAdapter baseAdapter = (BaseAdapter) listshop.getAdapter();
+//					if(baseAdapter instanceof MoveAdapter){
+//						((MoveAdapter)baseAdapter).notifyDataSetChanged();
+//					}
+//					listshop.setAdapter(new MoveAdapter());
+					mAdapter.notifyDataSetChanged();
+//					adapter.notifyDataSetChanged();
+					listshop.invalidateViews();
 				}
 			}
 			super.onPostExecute(result);
@@ -318,15 +348,15 @@ public class ShoppingActivity extends Activity implements OnClickListener {
 				if(adapter == null){
 					adapter = new MyAdapter();
 				}
-				adapter.notifyDataSetChanged();
 				listshop.setAdapter(adapter);
+				adapter.notifyDataSetChanged();
 				args = false;
 			}else{
 				if(mAdapter == null){
 					mAdapter = new MoveAdapter();
 				}
-				mAdapter.notifyDataSetChanged();
 				listshop.setAdapter(mAdapter);
+				mAdapter.notifyDataSetChanged();
 				args = true;
 			}
 			break;

@@ -178,8 +178,8 @@
                       android:layout_marginTop="10dp"
                       android:background="@drawable/stocknumber"
                       android:gravity="center"
-                      android:textSize="15dp"
-                      android:text=""/>
+                      android:textColor="#E04B11"
+                      android:inputType="number"/>
                   
                   <TextView
                       android:id="@+id/tv_count"

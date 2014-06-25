@@ -12,7 +12,7 @@
         android:background="@drawable/topnav" >
 
         <Button
-            android:id="@+id/but_shop_back"
+            android:id="@+id/but_collectback"
             android:layout_width="53dp"
             android:layout_height="match_parent"
             android:layout_alignParentLeft="true"

@@ -72,6 +72,7 @@
              android:textColor="#cfcfcf" />
 
          <Button
+             android:id="@+id/but_add"
              android:layout_width="35dp"
              android:layout_height="45dp"
              android:layout_alignBaseline="@+id/textView3"

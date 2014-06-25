@@ -185,6 +185,9 @@ public class SearchActivity extends ActionBarActivity implements
 			popupMenu.setOnMenuItemClickListener(onMenuItemClickListener);
 			popupMenu.show();
 			break;
+		case R.id.but_search_back:
+			finish();
+			break;
 		}
 	}
 

@@ -51,15 +51,16 @@
     <EditText
         android:id="@+id/editText1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="27dp"
         android:layout_alignBaseline="@+id/textView2"
         android:layout_alignBottom="@+id/textView2"
         android:layout_alignLeft="@+id/editText1"
         android:layout_marginRight="16dp"
+        android:gravity="center"
         android:background="#ffffff"
+        android:text="陈某某"
         android:ems="10"
         android:inputType="textPersonName" >
-
         <requestFocus />
     </EditText>
     
@@ -69,23 +70,24 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView2"
         android:layout_below="@+id/textView2"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="20dp"
         android:text="手机号码："
         android:textColor="#ffffff" />
 
     <EditText
         android:id="@+id/editText1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="27dp"
         android:layout_alignBaseline="@+id/textView3"
         android:layout_alignBottom="@+id/textView3"
         android:layout_marginRight="16dp"
         android:layout_toRightOf="@+id/textView2"
         android:background="#ffffff"
+        android:gravity="center"
+        android:text="13015944881"
         android:ems="10"
-        android:inputType="textPersonName" >
-
-        <requestFocus />
+        android:inputType="number" >
+        
     </EditText>
     
      <TextView
@@ -94,23 +96,23 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView3"
         android:layout_below="@+id/textView3"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="20dp"
         android:text="邮政编码："
         android:textColor="#ffffff" />
 
     <EditText
         android:id="@+id/editText2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="27dp"
         android:layout_alignBaseline="@+id/textView4"
         android:layout_alignBottom="@+id/textView4"
         android:layout_marginRight="16dp"
         android:layout_toRightOf="@+id/textView2"
         android:background="#ffffff"
+        android:gravity="center"
+        android:text="363100"
         android:ems="10"
-        android:inputType="textPersonName" >
-
-        <requestFocus />
+        android:inputType="number" >
     </EditText>
     
     <TextView
@@ -120,23 +122,89 @@
         android:layout_alignLeft="@+id/textView4"
         android:layout_below="@+id/textView4"
         android:layout_marginTop="15dp"
-        android:text="所在省市："
+        android:text="所在省份："
+        android:textColor="#ffffff" />
+
+    <Spinner
+        android:id="@+id/sp_add1"
+        android:layout_width="match_parent"
+        android:layout_height="29dp"
+        android:background="#ffffff"
+        android:layout_alignRight="@+id/editText2"
+        android:layout_alignTop="@+id/textView5"
+        android:layout_toRightOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView5"
+        android:layout_below="@+id/textView5"
+        android:layout_marginTop="20dp"
+        android:text="所在城市："
+        android:textColor="#ffffff" />
+
+    <Spinner
+        android:id="@+id/sp_add2"
+        android:layout_width="match_parent"
+        android:layout_height="29dp"
+        android:background="#ffffff"
+        android:layout_alignRight="@+id/editText2"
+        android:layout_alignTop="@+id/textView6"
+        android:layout_toRightOf="@+id/textView2" />
+    
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView6"
+        android:layout_below="@+id/textView6"
+        android:layout_marginTop="20dp"
+        android:text="所在地区："
+        android:textColor="#ffffff" />
+
+    <Spinner
+        android:id="@+id/sp_add3"
+        android:layout_width="match_parent"
+        android:layout_height="29dp"
+        android:background="#ffffff"
+        android:layout_alignRight="@+id/editText2"
+        android:layout_alignTop="@+id/textView7"
+        android:layout_toRightOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/tv_add_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView7"
+        android:layout_below="@+id/sp_add3"
+        android:layout_marginTop="15dp"
+        android:text="详细地址："
         android:textColor="#ffffff" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/ed_add_1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView5"
-        android:layout_alignBottom="@+id/textView5"
-        android:layout_marginRight="16dp"
-        android:layout_toRightOf="@+id/textView2"
+        android:layout_height="27dp"
+        android:layout_alignBaseline="@+id/tv_add_1"
+        android:layout_alignBottom="@+id/tv_add_1"
+        android:layout_alignLeft="@+id/sp_add3"
+        android:layout_alignRight="@+id/sp_add3"
         android:background="#ffffff"
+        android:gravity="center"
+        android:text="厦门市软件园二期55号B座206"
         android:ems="10"
-        android:inputType="textPersonName" >
+        android:inputType="textPersonName" />
 
-        <requestFocus />
-    </EditText>
+    <Button
+        android:id="@+id/but_good"
+        android:layout_width="77dp"
+        android:layout_height="35dp"
+        android:layout_alignRight="@+id/ed_add_1"
+        android:layout_below="@+id/ed_add_1"
+        android:layout_marginTop="37dp"
+        android:background="@drawable/but_account"
+        android:text="完成"
+        android:textColor="#ffffff" />
     
-
 </RelativeLayout>

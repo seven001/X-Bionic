@@ -55,7 +55,7 @@ public class ProductDetailsActivity extends FragmentActivity implements OnChecke
 	private int id;
 	private int[] color;
 	private int[] size;
-	private boolean add;
+	private boolean add = false;
 	private int colorIndex = 5656;
 	private int sizeIndex = 5656;
 	private RadioGroup ly,ls;
@@ -291,7 +291,7 @@ public class ProductDetailsActivity extends FragmentActivity implements OnChecke
 				builder.setTitle("购物车").setMessage("服务器出错啦！")
 				.setPositiveButton("确定", null).create().show();
 			}
-			
+			add = false;
 			super.onPostExecute(result);
 		}
 	};
@@ -322,10 +322,10 @@ public class ProductDetailsActivity extends FragmentActivity implements OnChecke
 		protected void onPostExecute(Integer result) {
 			AlertDialog.Builder builder = new AlertDialog.Builder(ProductDetailsActivity.this);
 			if (result == 200) {
-				builder.setTitle("购物车").setMessage("添加成功")
+				builder.setTitle("我的收藏").setMessage("添加成功")
 						.setPositiveButton("确定", null).create().show();
 			} else {
-				builder.setTitle("购物车").setMessage("服务器出错啦！")
+				builder.setTitle("我的收藏").setMessage("服务器出错啦！")
 						.setPositiveButton("确定", null).create().show();
 			}
 			super.onPostExecute(result);
@@ -512,13 +512,11 @@ public class ProductDetailsActivity extends FragmentActivity implements OnChecke
 		for (int i = 0; i < color.length; i++) {
 			if (checkedId == color[i]) {
 				colorIndex = i;
-				Log.i("color", colorLists.get(i).color);
 			}
 		}
 		for (int i = 0; i < size.length; i++) {
 			if (checkedId == size[i]) {
 				sizeIndex = i;
-				Log.i("size", sizeList.get(i).size);
 			}
 		}
 		if(colorIndex != 5656 && sizeIndex != 5656){
@@ -558,9 +556,9 @@ public class ProductDetailsActivity extends FragmentActivity implements OnChecke
 			if (HttpHelper.isNetWokrConnected(this)) {
 				new AddShop().execute(id, colorLists.get(colorIndex).id,
 						sizeList.get(sizeIndex).id);
-				edcount.setText("");
 			} else {
-				Toast.makeText(this, "网络不给力啊！", Toast.LENGTH_SHORT).show();
+				builder.setTitle("X-bionic").setMessage("网络不可用")
+						.setPositiveButton("确定", null).create().show();
 			}
 			break;
 		case R.id.but_detailsearch:
