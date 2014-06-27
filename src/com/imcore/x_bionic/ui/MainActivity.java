@@ -158,7 +158,10 @@ public class MainActivity extends Activity implements OnItemClickListener,
 			intent = new Intent(MainActivity.this, ShoppingActivity.class);
 			startActivity(intent);
 			break;
-
+		case 7:
+			intent = new Intent(MainActivity.this, SharesetActivity.class);
+			startActivity(intent);
+			break;
 		default:
 			break;
 		}

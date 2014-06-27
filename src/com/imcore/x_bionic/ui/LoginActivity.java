@@ -20,6 +20,8 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.imcore.x_bionic.ForgetpwActivity;
 import com.imcore.x_bionic.R;
 import com.imcore.x_bionic.http.HttpHelper;
 import com.imcore.x_bionic.http.JsonUtil;
@@ -62,11 +64,11 @@ public class LoginActivity extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		switch(v.getId()){
 		case R.id.but_enter:
-			
 			doLogin();
 			break;
 		case R.id.but_forgetpw:
-			
+			Intent intent = new Intent(this,ForgetpwActivity.class);
+			startActivity(intent);
 			break;
 		case R.id.but_back:
 			finish();

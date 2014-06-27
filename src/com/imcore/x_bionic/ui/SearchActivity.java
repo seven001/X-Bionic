@@ -155,18 +155,17 @@ public class SearchActivity extends ActionBarActivity implements
 		@Override
 		public boolean onMenuItemClick(MenuItem arg0) {
 			switch (arg0.getItemId()) {
-			case R.id.action_all:
-				butSearch.setBackgroundResource(R.drawable.dropdown);
-				category = 0;
-				break;
 			case R.id.action_product:
 				butSearch.setBackgroundResource(R.drawable.productfindbtn);
 				category = 1;
 				break;
-
 			case R.id.action_activity:
 				butSearch.setBackgroundResource(R.drawable.activitefindbtn);
 				category = 2;
+				break;
+			case R.id.action_all:
+				butSearch.setBackgroundResource(R.drawable.dropdown);
+				category = 0;
 				break;
 			default:
 				break;

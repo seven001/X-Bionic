@@ -58,7 +58,7 @@
 		            android:layout_height="32dp"
 		            android:layout_marginLeft="18dp"
 		            android:layout_marginTop="12dp"
-		            android:background="@drawable/dropdown"/>
+		            android:background="@drawable/productfindbtn"/>
 		        
 		        <ImageView
 		            android:id="@+id/shop_for_search"

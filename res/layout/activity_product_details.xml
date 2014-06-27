@@ -62,15 +62,12 @@
 	        android:text="坑爹产品，不解释"/>
 
 	    <Button
-	        android:id="@+id/but_collect"
+	        android:id="@+id/but_sinashare"
 	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:background="@drawable/but_shop"
+	        android:layout_height="match_parent"
 	        android:layout_alignParentRight="true"
-	        android:layout_marginRight="11dp"
-	        android:layout_marginTop= "3dp"
-	        android:text="添加收藏"
-	        android:textColor="#ffffff" />
+	        android:layout_marginRight="10dp"
+	        android:background="@drawable/but_sina_share" />
 
 	    </RelativeLayout>
 		<LinearLayout
@@ -156,6 +153,22 @@
                       android:layout_marginTop="10dp"
                       android:orientation="horizontal" >
                   </RadioGroup>
+                  <RelativeLayout 
+                      android:layout_width="wrap_content"
+			          android:layout_height="match_parent">
+
+	                  <Button
+	                      android:id="@+id/but_collect"
+	                      android:layout_width="wrap_content"
+	                      android:layout_height="wrap_content"
+	                      android:layout_alignParentRight="true"
+	                      android:layout_centerVertical="true"
+	                      android:background="@drawable/but_shop"
+	                      android:layout_marginRight="16dp"
+	                      android:text="添加收藏"
+	                      android:textColor="#ffffff" />
+
+                 </RelativeLayout> 
               </LinearLayout>
               <LinearLayout
                   android:layout_width="match_parent"
@@ -186,19 +199,26 @@
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
                       android:layout_marginLeft="10dp"
-                      android:layout_marginTop="10dp"
+                      android:layout_marginTop="8dp"
                       android:textColor="#ffffff"
                       android:textSize="15dp"
                       android:text="(库存3件)"/>
-                  <Button
-                      android:id="@+id/but_shopping"
+                  <RelativeLayout 
                       android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
-                      android:layout_marginLeft="20dp"
-                      android:layout_marginTop="10dp"
-                      android:background="@drawable/but_shop"
-                      android:textColor="#ffffff"
-                      android:text="加入购物车"/>
+                      android:layout_height="match_parent">
+
+	                  <Button
+	                      android:id="@+id/but_shopping"
+	                      android:layout_width="wrap_content"
+	                      android:layout_height="wrap_content"
+	                      android:layout_alignParentRight="true"
+	                      android:background="@drawable/but_shop"
+	                      android:layout_marginTop="10dp"
+	                      android:layout_marginRight="16dp"
+	                      android:text="加入购物车"
+	                      android:textColor="#ffffff" />
+
+                  </RelativeLayout>
               </LinearLayout>
 	</LinearLayout>
 	<RelativeLayout

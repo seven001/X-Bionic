@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import com.imcore.x_bionic.R;
+import com.imcore.x_bionic.http.Constants;
 import com.imcore.x_bionic.http.HttpHelper;
 import com.imcore.x_bionic.http.HttpMethod;
 import com.imcore.x_bionic.http.JsonUtil;
@@ -19,12 +20,21 @@ import com.imcore.x_bionic.model.SizeStandardDetailList;
 import com.imcore.x_bionic.model.Storage;
 import com.imcore.x_bionic.model.SysColorList;
 import com.imcore.x_bionic.util.MyApplication;
+import com.sina.weibo.sdk.api.BaseMediaObject;
+import com.sina.weibo.sdk.api.ImageObject;
+import com.sina.weibo.sdk.api.WeiboMessage;
+import com.sina.weibo.sdk.api.share.IWeiboDownloadListener;
+import com.sina.weibo.sdk.api.share.IWeiboShareAPI;
+import com.sina.weibo.sdk.api.share.SendMessageToWeiboRequest;
+import com.sina.weibo.sdk.api.share.WeiboShareSDK;
+import com.sina.weibo.sdk.exception.WeiboShareException;
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.util.Log;
+import android.text.Html.ImageGetter;
 import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -64,7 +74,9 @@ public class ProductDetailsActivity extends FragmentActivity implements OnChecke
 	private ListView lview;
 	private LinearLayout llScroll;
 	private EditText edcount;
-	private Button butshop,butsearch,butback,butcollect;
+	private Button butshop,butsearch,butback,butcollect,butsina;
+	/** 微博分享的接口实例 */
+	private IWeiboShareAPI mWeiboShareAPI;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +96,8 @@ public class ProductDetailsActivity extends FragmentActivity implements OnChecke
 		butsearch = (Button) findViewById(R.id.but_detailsearch);
 		butback = (Button) findViewById(R.id.btn_detailback);
 		butcollect = (Button) findViewById(R.id.but_collect);
+		butsina = (Button) findViewById(R.id.but_sinashare);
+		butsina.setOnClickListener(this);
 		butcollect.setOnClickListener(this);
 		butsearch.setOnClickListener(this);
 		butback.setOnClickListener(this);
@@ -492,6 +506,7 @@ public class ProductDetailsActivity extends FragmentActivity implements OnChecke
 				view = getLayoutInflater().inflate(R.layout.view_item_detail, null);
 				viewHolder = new ViewHolder();
 				viewHolder.imageView = (ImageView) view.findViewById(R.id.iv_img);
+				butsina.setTag(viewHolder.imageView);
 				view.setTag(viewHolder);
 			}else{
 				viewHolder = (ViewHolder) view.getTag();
@@ -501,7 +516,7 @@ public class ProductDetailsActivity extends FragmentActivity implements OnChecke
 			new ImageFetcher().fetch(imgPath, viewHolder.imageView);
 			return view;
 		}
-		class ViewHolder{
+		private class ViewHolder{
 			public ImageView imageView;
 		}
 
@@ -571,7 +586,71 @@ public class ProductDetailsActivity extends FragmentActivity implements OnChecke
 		case R.id.btn_detailback:
 			finish();
 			break;
+		case R.id.but_sinashare:
+			initialize();
+			try {
+				// 1.检查微博客户端环境是否正常，如果未安装微博，弹出对话框询问用户下载微博客户端
+				if (mWeiboShareAPI.checkEnvironment(true)) {
+					ImageView imag = (ImageView) v.getTag(); 
+					 //初始化分享消息
+					 WeiboMessage weiboMessage = new WeiboMessage();
+					 weiboMessage.mediaObject = getImageObj(imag);
+					 // 2. 初始化从第三方到微博的消息请求
+				        SendMessageToWeiboRequest request = new SendMessageToWeiboRequest();
+				        // 用transaction唯一标识一个请求
+				        request.transaction = String.valueOf(System.currentTimeMillis());
+				        request.message = weiboMessage;
+				        
+				        // 3. 发送请求消息到微博，唤起微博分享界面
+				        mWeiboShareAPI.sendRequest(request);
+				}
+			} catch (WeiboShareException e) {
+				e.printStackTrace();
+				Toast.makeText(ProductDetailsActivity.this, e.getMessage(),
+						Toast.LENGTH_LONG).show();
+			}
+			break;
 		}
+	}
+	/**
+     * 创建图片消息对象。
+     * 
+     * @return 图片消息对象。
+     */
+	private BaseMediaObject getImageObj(ImageView img) {
+		ImageObject imageObject = new ImageObject();
+        BitmapDrawable bitmapDrawable = (BitmapDrawable) img.getDrawable();
+        imageObject.setImageObject(bitmapDrawable.getBitmap());
+        return imageObject;
+	}
+
+	/**
+	 * 初始化 UI 和微博接口实例 。
+	 */
+	private void initialize() {
+
+		// 创建微博 SDK 接口实例
+		mWeiboShareAPI = WeiboShareSDK.createWeiboAPI(this, Constants.APP_KEY);
+
+		// 获取微博客户端相关信息，如是否安装、支持 SDK 的版本
+		boolean isInstalledWeibo = mWeiboShareAPI.isWeiboAppInstalled();
+		int supportApiLevel = mWeiboShareAPI.getWeiboAppSupportAPI();
+
+		// 如果未安装微博客户端，设置下载微博对应的回调
+		if (!isInstalledWeibo) {
+			mWeiboShareAPI
+					.registerWeiboDownloadListener(new IWeiboDownloadListener() {
+						@Override
+						public void onCancel() {
+							Toast.makeText(
+									ProductDetailsActivity.this,"请下载sina微博，才可执行以下操作",
+									Toast.LENGTH_SHORT).show();
+						}
+					});
+		}
+
+		mWeiboShareAPI.registerApp();
+
 	}
 
 }

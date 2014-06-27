@@ -47,5 +47,8 @@
     <string name="title_activity_arch">ArchActivity</string>
     <string name="title_activity_master">MasterActivity</string>
     <string name="title_activity_archs">ArchsActivity</string>
+    <string name="title_activity_shareset">SharesetActivity</string>
+    <string name="title_activity_forgetpw">ForgetpwActivity</string>
+    <string name="title_activity_comment_for">CommentForActivity</string>
 
 </resources>

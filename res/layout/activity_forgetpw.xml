@@ -1,0 +1,64 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/allbackground"
+    tools:context=".ForgetpwActivity" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:background="@drawable/topnav" >
+
+        <Button
+            android:id="@+id/but_forgetset"
+            android:layout_width="53dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/but_back" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="部落平方"
+            android:textColor="#d7d7d7"
+            android:textSize="22sp" />
+    </RelativeLayout>
+    
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/relativeLayout1"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="20dp"
+        android:text="邮箱账号"
+        android:textColor="#ffffff"
+        android:textSize="16dp" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:background="#ffffff"
+        android:inputType="number"
+        android:ems="10" >
+    </EditText>
+
+    <Button
+        android:layout_width="70dp"
+        android:layout_height="35dp"
+        android:layout_alignLeft="@+id/editText1"
+        android:layout_below="@+id/editText1"
+        android:layout_marginTop="19dp"
+        android:text="提交"
+        android:textColor="#ffffff"
+        android:background="@drawable/but_shop" />
+
+</RelativeLayout>

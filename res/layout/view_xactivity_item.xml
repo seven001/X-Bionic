@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="290dp" >
+
+        <ImageView
+            android:id="@+id/img_xaty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="69dp"
+            android:scaleType="fitXY"
+            android:background="#000000" />
+
+        <TextView
+            android:id="@+id/tv_xaty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/img_xaty"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="16dp"
+            android:text="123"
+            android:textColor="#d7d7d7"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/tv_time1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/img_xaty"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/tv_xaty"
+            android:text="123"
+            android:textColor="#d7d7d7" />
+
+        <TextView
+            android:id="@+id/tv_time2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/tv_time1"
+            android:layout_alignBottom="@+id/tv_time1"
+            android:layout_toRightOf="@+id/tv_time1"
+            android:text="123"
+            android:textColor="#d7d7d7" />
+
+        <Button
+            android:id="@+id/but_xactivity"
+            android:layout_width="53dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tv_xaty"
+            android:layout_alignRight="@+id/img_xaty"
+            android:layout_alignTop="@+id/tv_xaty"
+            android:background="@drawable/but_sina"
+            android:text="活动中"
+            android:textColor="#ffffff"
+            android:textSize="13dp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

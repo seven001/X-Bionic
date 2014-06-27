@@ -1,0 +1,73 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/allbackground"
+    tools:context=".CommentForActivity" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:background="@drawable/topnav" >
+
+        <Button
+            android:id="@+id/but_shop_back"
+            android:layout_width="53dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/but_back" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="商品评论"
+            android:textColor="#d7d7d7"
+            android:textSize="22dp" />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/et_commenttitle"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_below="@+id/relativeLayout1"
+        android:background="#ffffff"
+        android:layout_marginTop="22dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:hint="评论标题"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/ed_commentfor"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_alignLeft="@+id/et_commenttitle"
+        android:layout_alignRight="@+id/et_commenttitle"
+        android:layout_below="@+id/et_commenttitle"
+        android:background="#ffffff"
+        android:layout_marginTop="27dp"
+        android:inputType="textMultiLine"
+        android:gravity="top"
+        android:hint="对于我们的产品有什么意见和建议！快来评论吧！"
+        android:ems="10" />
+
+    <Button
+        android:id="@+id/but_forcommment"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_alignLeft="@+id/ed_commentfor"
+        android:layout_alignRight="@+id/ed_commentfor"
+        android:layout_below="@+id/ed_commentfor"
+        android:layout_marginTop="27dp"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:textSize="19dp"
+        android:text="确认提交"
+        android:background="@drawable/but_go_enter" />
+
+</RelativeLayout>

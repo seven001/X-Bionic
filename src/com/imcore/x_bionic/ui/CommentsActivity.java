@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.imcore.x_bionic.CommentForActivity;
 import com.imcore.x_bionic.R;
 import com.imcore.x_bionic.R.id;
 import com.imcore.x_bionic.R.layout;
@@ -13,27 +14,36 @@ import com.imcore.x_bionic.http.JsonUtil;
 import com.imcore.x_bionic.http.RequestEntity;
 import com.imcore.x_bionic.http.ResponseJsonEntity;
 import com.imcore.x_bionic.model.Comments;
+import com.imcore.x_bionic.util.MyApplication;
+
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class CommentsActivity extends Fragment {
+public class CommentsActivity extends Fragment implements OnClickListener {
 	private List<Comments> comments;
 	private ListView listV;
+	private Button butshare;
+	private int id;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.activity_comments, null);
+		butshare = (Button) view.findViewById(R.id.but_byshare);
+		butshare.setOnClickListener(this);
 		listV = (ListView) view.findViewById(R.id.lv_comments);
 		Bundle bundle = getArguments();
-		int id = bundle.getInt("id");
+		id = bundle.getInt("id");
 		new comments().execute(id);
 		return view;
 	}
@@ -94,6 +104,13 @@ public class CommentsActivity extends Fragment {
 			return convertView;
 		}
 		
+	}
+
+	@Override
+	public void onClick(View v) {
+		Intent intent = new Intent(getActivity(),CommentForActivity.class);
+		intent.putExtra("id", id);
+		startActivity(intent);
 	}
 
 }

@@ -6,9 +6,9 @@
     android:background="@drawable/peoplebackground"
     tools:context=".LoginActivity" >
     
-    <FrameLayout 
+    <RelativeLayout 
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="53dp"
         android:background="@drawable/topnav">
         <Button
             android:id="@+id/but_back"
@@ -20,14 +20,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="首页"
-            android:textColor="#FFFFFF"
-            android:textSize="18dp" />
+            android:text="登陆"
+            android:textColor="#d7d7d7"
+            android:textSize="22dp" />
 
-    </FrameLayout>
+    </RelativeLayout>
     <LinearLayout 
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="1">
         <TextView
 	        android:layout_width="match_parent"
@@ -35,15 +35,16 @@
 	        android:layout_marginTop="36dp"
 	        android:gravity="center"
 	        android:text="无线增值服务应用，欢迎你！"
-	        android:textColor="#CFCFCF"
+	        android:textColor="#cfcfcf"
 	        android:textSize="20sp" />
         
     </LinearLayout>    
     <LinearLayout 
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1">
-       <FrameLayout
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="0.4">
+       <RelativeLayout
            android:layout_width="match_parent"
            android:layout_height="match_parent">
 
@@ -66,7 +67,8 @@
              android:layout_height="wrap_content"
              android:layout_marginLeft="25dp"
              android:layout_marginRight="25dp"
-             android:layout_marginTop="100dp"
+             android:layout_marginTop="16dp"
+             android:layout_below="@+id/user_login"
              android:background="@drawable/enterbound"
              android:ems="10"
              android:gravity="center"
@@ -85,31 +87,31 @@
              android:layout_width="40dp"
              android:layout_height="40dp"
              android:src="@drawable/keypicture"
-             android:layout_marginTop="100dp"
+             android:layout_below="@+id/user_login"
+             android:layout_marginTop="19dp"
              android:layout_marginLeft="40dp" />
 
          <Button
              android:id="@+id/but_enter"
              android:layout_width="match_parent"
              android:layout_height="46dp"
-             android:layout_marginTop="180dp"
+             android:layout_marginTop="29dp"
              android:layout_marginLeft="25dp"
              android:layout_marginRight="25dp"
+             android:layout_below="@+id/password_login"
              android:background="@drawable/btn_enter" />
 
          <Button
              android:id="@+id/but_forgetpw"
              android:layout_width="wrap_content"
              android:layout_height="20dp"
-             android:background="@drawable/passwordpicture"
+             android:background="@drawable/forget_password"
+             android:layout_below="@+id/but_enter"
              android:layout_marginLeft="25dp"
-             android:layout_marginTop="249dp"
-              />
+             android:layout_marginTop="19dp"/>
         
-    </FrameLayout>
+    </RelativeLayout>
         
     </LinearLayout>
-
-  
 
 </LinearLayout>

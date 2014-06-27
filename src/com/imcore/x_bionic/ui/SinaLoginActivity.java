@@ -17,9 +17,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class SinaLoginActivity extends Activity implements OnClickListener {
-	private final static String APP_KEY = "341341976";
-	private final static String APP_SECRET = "f09f112de15f7e9f1cd29b3df763fd05";
-	private final static String REDIRECT_URL = "http://www.sina.com";
+	public final static String APP_KEY = "341341976";
+	public final static String APP_SECRET = "f09f112de15f7e9f1cd29b3df763fd05";
+	public final static String REDIRECT_URL = "http://www.sina.com";
 	
 	private Button sinalg,sinald,cancel;
 	private TextView showToken;

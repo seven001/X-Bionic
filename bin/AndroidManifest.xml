@@ -100,6 +100,11 @@
             android:name="com.imcore.x_bionic.ui.ProductDetailsActivity"
             android:label="@string/title_activity_product_details"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
         <activity
             android:name="com.imcore.x_bionic.ui.ProductDetailFragment"
@@ -178,8 +183,23 @@
         </activity>
         <activity
             android:name="com.imcore.x_bionic.ui.ArchsActivity"
-            android:label="@string/title_activity_archs" 
-            android:theme="@android:style/Theme.Light.NoTitleBar">
+            android:label="@string/title_activity_archs"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.imcore.x_bionic.ui.SharesetActivity"
+            android:label="@string/title_activity_shareset"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.imcore.x_bionic.ForgetpwActivity"
+            android:label="@string/title_activity_forgetpw"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.imcore.x_bionic.CommentForActivity"
+            android:label="@string/title_activity_comment_for"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
     </application>
 

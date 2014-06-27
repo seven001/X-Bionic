@@ -8,7 +8,7 @@
     
     <ImageView 
         android:id="@+id/img_for_labs"
-        android:layout_width="139dp"
+        android:layout_width="95dp"
         android:layout_height="match_parent"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp" />
@@ -18,7 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_marginBottom="10dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="10dp"
         android:gravity="center_vertical"
         android:textColor="#ffffff"

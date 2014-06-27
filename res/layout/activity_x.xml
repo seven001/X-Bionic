@@ -41,7 +41,7 @@
 		        android:layout_height="52dp"
 		        android:layout_marginTop="53dp"
 		        android:orientation="horizontal"
-		        android:background="@drawable/tmall_bg_furley">
+		        android:background="@drawable/allbackground">
 		        
 		        <Button 
 		            android:id="@+id/but_forfilter"

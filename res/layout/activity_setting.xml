@@ -67,7 +67,7 @@
     <Button
         android:id="@+id/but_sina_login"
         android:layout_width="match_parent"
-        android:layout_height="35dp"
+        android:layout_height="42dp"
         android:layout_below="@+id/editText3"
         android:layout_marginTop="16dp"
         android:layout_marginLeft="16dp"

@@ -213,7 +213,7 @@ public class CollectionActivity extends Activity implements OnClickListener {
 //			}
 			viewholder.texttitle.setText(String.valueOf(list.get(position).name));
 			viewholder.textprice.setText(String.valueOf("￥"+list.get(position).price));
-			viewholder.texttime.setText(String.valueOf(list.get(position).createDate));
+			viewholder.texttime.setText(String.valueOf(mList.get(position).addDate));
 			new ImageFetcher().fetch("http://bulo2bulo.com"+
 			                   list.get(position).imageUrl+"_L.jpg", viewholder.imgphoto);
 			

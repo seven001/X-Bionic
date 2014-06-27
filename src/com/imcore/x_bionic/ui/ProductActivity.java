@@ -154,7 +154,10 @@ public class ProductActivity extends Activity implements OnClickListener, OnItem
 			intent = new Intent(this, ShoppingActivity.class);
 			startActivity(intent);
 			break;
-
+		case 7:
+			intent = new Intent(this, SharesetActivity.class);
+			startActivity(intent);
+			break;
 		default:
 			break;
 		}
