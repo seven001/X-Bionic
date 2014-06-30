@@ -6,17 +6,17 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="111dp" >
+        android:layout_height="100dp">
 
         <ImageView
             android:id="@+id/img_story"
             android:layout_width="85dp"
             android:layout_height="match_parent"
-            android:layout_marginBottom="13dp"
+            android:layout_marginBottom="11dp"
             android:layout_marginLeft="13dp"
-            android:layout_marginTop="13dp"
+            android:layout_marginTop="11dp"
             android:scaleType="centerCrop"
-            android:background="@drawable/img_12" />
+            android:background="@drawable/img_123" />
 
         <TextView
             android:id="@+id/tv_story_time"
@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/img_story"
             android:layout_alignLeft="@+id/tv_story_title"
-            android:layout_marginBottom="17dp"
+            android:layout_marginBottom="12dp"
             android:text="123"
             android:textColor="#919191"
             android:textSize="12dp" />
@@ -35,10 +35,10 @@
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/img_story"
             android:layout_marginLeft="17dp"
-            android:layout_marginTop="17dp"
+            android:layout_marginTop="12dp"
             android:layout_toRightOf="@+id/img_story"
             android:text="123"
-            android:textColor="#919191"
+            android:textColor="#ffffff"
             android:textSize="16dp" />
 
     </RelativeLayout>
