@@ -3,19 +3,13 @@ package com.imcore.x_bionic.ui;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import com.imcore.x_bionic.CommentForActivity;
 import com.imcore.x_bionic.R;
-import com.imcore.x_bionic.R.id;
-import com.imcore.x_bionic.R.layout;
 import com.imcore.x_bionic.http.HttpHelper;
 import com.imcore.x_bionic.http.HttpMethod;
 import com.imcore.x_bionic.http.JsonUtil;
 import com.imcore.x_bionic.http.RequestEntity;
 import com.imcore.x_bionic.http.ResponseJsonEntity;
 import com.imcore.x_bionic.model.Comments;
-import com.imcore.x_bionic.util.MyApplication;
-
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -48,6 +42,13 @@ public class CommentsActivity extends Fragment implements OnClickListener {
 		return view;
 	}
 	
+	@Override
+	public void onResume() {
+		new comments().execute(id);
+		super.onResume();
+	}
+	
+
 	private class comments extends AsyncTask<Integer, Void , Void>{
 
 		@Override

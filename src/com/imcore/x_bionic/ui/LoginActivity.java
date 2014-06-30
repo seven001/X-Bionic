@@ -21,7 +21,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.imcore.x_bionic.ForgetpwActivity;
 import com.imcore.x_bionic.R;
 import com.imcore.x_bionic.http.HttpHelper;
 import com.imcore.x_bionic.http.JsonUtil;

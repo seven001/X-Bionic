@@ -192,12 +192,12 @@
             android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
-            android:name="com.imcore.x_bionic.ForgetpwActivity"
+            android:name="com.imcore.x_bionic.ui.ForgetpwActivity"
             android:label="@string/title_activity_forgetpw"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
-            android:name="com.imcore.x_bionic.CommentForActivity"
+            android:name="com.imcore.x_bionic.ui.CommentForActivity"
             android:label="@string/title_activity_comment_for"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>

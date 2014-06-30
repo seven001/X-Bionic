@@ -16,7 +16,7 @@
             android:layout_marginBottom="13dp"
             android:layout_marginLeft="13dp"
             android:layout_marginTop="13dp"
-            android:scaleType="centerCrop"
+            android:scaleType="fitXY"
             android:background="@drawable/img_12" />
 
         <TextView
