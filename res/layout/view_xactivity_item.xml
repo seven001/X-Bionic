@@ -13,10 +13,10 @@
             android:id="@+id/img_xaty"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="17dp"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
-            android:layout_marginTop="69dp"
+            android:layout_marginTop="75dp"
             android:scaleType="fitXY"
             android:background="#000000" />
 
@@ -36,8 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/img_xaty"
-            android:layout_marginTop="5dp"
-            android:layout_below="@+id/tv_xaty"
+            android:layout_marginTop="55dp"
             android:text="123"
             android:textColor="#d7d7d7" />
 
@@ -54,11 +53,10 @@
         <Button
             android:id="@+id/but_xactivity"
             android:layout_width="53dp"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/tv_xaty"
+            android:layout_height="19dp"
             android:layout_alignRight="@+id/img_xaty"
-            android:layout_alignTop="@+id/tv_xaty"
             android:background="@drawable/but_sina"
+            android:layout_marginTop="19dp"
             android:text="活动中"
             android:textColor="#ffffff"
             android:textSize="13dp" />

@@ -1,0 +1,174 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/allbackground"
+    tools:context=".XActivityDetail" >
+
+    <FrameLayout 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+	    <RelativeLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="53dp"
+	        android:background="@drawable/topnav" >
+	
+	        <TextView
+	            android:layout_width="match_parent"
+	            android:layout_height="match_parent"
+	            android:gravity="center"
+	            android:text="活动详情"
+	            android:textColor="#d7d7d7"
+	            android:textSize="22sp" />
+	
+	        <Button
+	            android:id="@+id/but_bx_d"
+	            android:layout_width="53dp"
+	            android:layout_height="match_parent"
+	            android:background="@drawable/but_back" />
+	    </RelativeLayout>
+	    <FrameLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent">
+	        <ScrollView 
+	            android:layout_width="match_parent"
+	            android:layout_height="match_parent">
+
+	             <RelativeLayout
+	                 android:layout_width="match_parent"
+	                 android:layout_height="wrap_content" >
+			
+			        <ImageView
+			            android:id="@+id/img_xaty2"
+			            android:layout_width="match_parent"
+			            android:layout_height="220dp"
+			            android:layout_marginLeft="15dp"
+			            android:layout_marginRight="15dp"
+			            android:layout_marginTop="72dp"
+			            android:background="#000000"
+			            android:scaleType="fitXY" />
+			
+			        <TextView
+			            android:id="@+id/tv_xaty2"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_alignLeft="@+id/img_xaty2"
+			            android:layout_alignParentTop="true"
+			            android:layout_marginTop="16dp"
+			            android:text="123"
+			            android:textColor="#d7d7d7"
+			            android:textSize="18dp" />
+			
+			        <TextView
+			            android:id="@+id/tv_times1"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_alignLeft="@+id/img_xaty2"
+			            android:layout_marginTop="5dp"
+			            android:layout_below="@+id/tv_xaty2"
+			            android:text="123"
+			            android:textColor="#d7d7d7" />
+			
+			        <TextView
+			            android:id="@+id/tv_times2"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_alignBaseline="@+id/tv_times1"
+			            android:layout_alignBottom="@+id/tv_times1"
+			            android:layout_toRightOf="@+id/tv_times1"
+			            android:text="123"
+			            android:textColor="#d7d7d7" />
+			
+			        <Button
+			            android:id="@+id/but_xactivity2"
+			            android:layout_width="53dp"
+			            android:layout_height="22dp"
+			            android:layout_alignRight="@+id/img_xaty2"
+			            android:layout_alignTop="@+id/tv_xaty2"
+			            android:background="@drawable/but_activity"
+			            android:text="报名"
+			            android:textColor="#ffffff"
+			            android:textSize="13dp" />
+
+			        <TextView
+			            android:id="@+id/tv_xact"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_alignLeft="@+id/img_xaty2"
+			            android:layout_below="@+id/img_xaty2"
+			            android:layout_marginTop="49dp"
+			            android:textSize="18dp"
+			            android:text="123"
+			            android:textColor="#d7d7d7" />
+
+			        <TextView
+			            android:id="@+id/tv_xac2"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_alignLeft="@+id/img_xaty2"
+			            android:layout_below="@+id/tv_xact"
+			            android:text="123"
+			            android:textColor="#d7d7d7"
+			            android:textSize="18dp" />
+			        
+			        <TextView
+			            android:id="@+id/tv_xac3"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_alignLeft="@+id/img_xaty2"
+			            android:layout_below="@+id/tv_xac2"
+			            android:text="组织者：部落平方"
+			            android:textColor="#d7d7d7"
+			            android:textSize="18dp" />
+			        
+			        <TextView
+			            android:id="@+id/tv_xac4"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_alignLeft="@+id/img_xaty2"
+			            android:layout_below="@+id/tv_xac3"
+			            android:text="123"
+			            android:textColor="#d7d7d7"
+			            android:textSize="18dp" />
+			        <TextView
+			            android:id="@+id/tv_xac5"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_alignLeft="@+id/img_xaty2"
+			            android:layout_below="@+id/tv_xac4"
+			            android:text="类    型：部落火把"
+			            android:textColor="#d7d7d7"
+			            android:textSize="18dp" />
+			        
+			        <TextView
+			            android:id="@+id/tv_xac6"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_alignLeft="@+id/img_xaty2"
+			            android:layout_below="@+id/tv_xac5"
+			            android:text="123"
+			            android:textColor="#d7d7d7"
+			            android:textSize="18dp" />
+			        
+			        <TextView
+			            android:id="@+id/tv_xdetail"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_alignLeft="@+id/img_xaty2"
+			            android:layout_below="@+id/tv_xac6"
+			            android:layout_marginTop="69dp"
+			            android:text="主题"
+			            android:textColor="#d7d7d7"
+			            android:textSize="18dp" />
+			        
+			        
+			    </RelativeLayout>
+	        </ScrollView>
+	    </FrameLayout>
+	    </LinearLayout>
+    </FrameLayout>
+</RelativeLayout>

@@ -127,6 +127,17 @@ public class SearchActivity extends ActionBarActivity implements OnClickListener
 					gdView.setVisibility(View.GONE);
 					lvadapter = new ListVAdapter();
 					listv.setAdapter(lvadapter);
+					listv.setOnItemClickListener(new OnItemClickListener() {
+
+						@Override
+						public void onItemClick(AdapterView<?> parent,
+								View view, int position, long id) {
+							Intent intent = new Intent(SearchActivity.this,XActivityDetail.class);
+							int activityId = xlist.get(position).id;
+							intent.putExtra("id", activityId);
+							startActivity(intent);
+						}
+					});
 				}
 			}else{
 				pdProgress.dismiss();
@@ -225,7 +236,7 @@ public class SearchActivity extends ActionBarActivity implements OnClickListener
 			fetcher.fetch(url+xlist.get(position).titleImageUrl+".jpg", imgx);
 			tvtitle.setText(xlist.get(position).title);	
 			tvtime1.setText(xlist.get(position).beginTime);
-			tvtime2.setText("——"+xlist.get(position).endTime);
+			tvtime2.setText("—"+xlist.get(position).endTime);
 			return convertView;
 		}
 	}

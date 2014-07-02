@@ -18,11 +18,14 @@ import com.imcore.x_bionic.util.TextUtil;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -43,7 +46,7 @@ public class XActivity extends Activity implements OnClickListener {
 		list = (ListView) findViewById(R.id.x_activity);
 		new xActivity().execute();
 	}
-	private class xActivity extends AsyncTask<String , Void, String>{
+	private class xActivity extends AsyncTask<String , Void, String> implements OnItemClickListener{
 
 		@Override
 		protected String doInBackground(String...params) {
@@ -72,7 +75,16 @@ public class XActivity extends Activity implements OnClickListener {
 		@Override
 		protected void onPostExecute(String result) {
 			list.setAdapter(new ListVAdapter());
+			list.setOnItemClickListener(this);
 			super.onPostExecute(result);
+		}
+		@Override
+		public void onItemClick(AdapterView<?> parent, View view, int position,
+				long id) {
+			Intent intent = new Intent(XActivity.this,XActivityDetail.class);
+			int xactivityId = xlist.get(position).id;
+			intent.putExtra("id", xactivityId);
+			startActivity(intent);
 		}
 		
 	}
@@ -105,7 +117,7 @@ public class XActivity extends Activity implements OnClickListener {
 			fetcher.fetch(url+xlist.get(position).titleImageUrl+".jpg", imgx);
 			tvtitle.setText(xlist.get(position).title);	
 			tvtime1.setText(xlist.get(position).beginTime);
-			tvtime2.setText("——"+xlist.get(position).endTime);
+			tvtime2.setText("—"+xlist.get(position).endTime);
 			return convertView;
 		}
 	}

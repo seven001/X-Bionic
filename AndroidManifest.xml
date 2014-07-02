@@ -201,6 +201,11 @@
             android:label="@string/title_activity_comment_for"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
+        <activity
+            android:name="com.imcore.x_bionic.ui.XActivityDetail"
+            android:label="@string/title_activity_xactivity_detail" 
+            android:theme="@android:style/Theme.Light.NoTitleBar">
+        </activity>
     </application>
 
 </manifest>

@@ -143,8 +143,10 @@
 
          <RadioButton
              android:id="@+id/rbt_1"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
+             android:layout_width="12dp"
+             android:layout_height="12dp"
+             android:button="@null"
+             android:background="@drawable/selectrdio"
              android:layout_centerVertical="true"
              android:layout_toRightOf="@+id/textView5" />
 
@@ -185,9 +187,12 @@
 
          <RadioButton
              android:id="@+id/rbt_2"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
+             android:layout_width="12dp"
+             android:layout_height="12dp"
              android:layout_centerVertical="true"
+             android:checked="false"
+             android:button="@null"
+             android:background="@drawable/selectrdio"
              android:layout_toRightOf="@+id/textView6" />
 
          <TextView
@@ -196,7 +201,7 @@
              android:layout_height="wrap_content"
              android:layout_centerVertical="true"
              android:layout_toRightOf="@+id/rbt_2"
-             android:textSize="12dp"
+             android:textSize="14dp"
              android:text="快递"
              android:textColor="#cfcfcf" />
          

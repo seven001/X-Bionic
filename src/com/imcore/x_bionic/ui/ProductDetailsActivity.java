@@ -30,30 +30,28 @@ import com.sina.weibo.sdk.api.share.WeiboShareSDK;
 import com.sina.weibo.sdk.exception.WeiboShareException;
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.text.Html.ImageGetter;
 import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.ViewGroup.MarginLayoutParams;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Gallery;
 import android.widget.ImageView;
+import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class ProductDetailsActivity extends FragmentActivity implements OnCheckedChangeListener, OnClickListener {
+public class ProductDetailsActivity extends FragmentActivity implements OnClickListener {
 	private List<ProductDetails> list;
 	private List<SysColorList> colorLists;
 	private List<SizeList> sizeList;
@@ -63,12 +61,10 @@ public class ProductDetailsActivity extends FragmentActivity implements OnChecke
 	private Products products;
 	private TextView tvname,tvprice,tvcount;
 	private int id;
-	private int[] color;
-	private int[] size;
 	private boolean add = false;
 	private int colorIndex = 5656;
 	private int sizeIndex = 5656;
-	private RadioGroup ly,ls;
+	private LinearLayout ly,ls;
 	private int productQuantityId;
 	private SizeStandard sizeStandard;
 	private ListView lview;
@@ -106,8 +102,8 @@ public class ProductDetailsActivity extends FragmentActivity implements OnChecke
 		tvcount = (TextView) findViewById(R.id.tv_count);
 		tvname = (TextView) findViewById(R.id.tv_details);
 		tvprice = (TextView) findViewById(R.id.text_price);
-		ly = (RadioGroup)findViewById(R.id.rg_color);
-		ls =(RadioGroup)findViewById(R.id.rg_size);
+		ly = (LinearLayout)findViewById(R.id.rg_color);
+		ls =(LinearLayout)findViewById(R.id.rg_size);
 		gallery = (Gallery) findViewById(R.id.gl_detail);
 		//判断网络状态
 		if (HttpHelper.isNetWokrConnected(this)) {
@@ -116,7 +112,9 @@ public class ProductDetailsActivity extends FragmentActivity implements OnChecke
 			new getColors().execute(id);
 			new getScience().execute(id);
 		} else{
-			Toast.makeText(this, "网络不给力啊！", Toast.LENGTH_SHORT).show();
+			AlertDialog.Builder builder = new AlertDialog.Builder(this);
+			builder.setTitle("X-bionic").setMessage("网络不给力啊！")
+			.setPositiveButton("确定", null).create().show();
 		}
 	}
 	private class getImageUrl extends AsyncTask<Integer , Void, Void>{
@@ -185,49 +183,84 @@ public class ProductDetailsActivity extends FragmentActivity implements OnChecke
 				tvprice.setText("￥"+String.valueOf(products.price));
 				ImageFetcher fetcher = new ImageFetcher();
 				String url = "http://www.bulo2bulo.com";
-				ly.setOnCheckedChangeListener(ProductDetailsActivity.this);
-				color = new int[colorLists.size()];
 				for(int i= 0;i <colorLists.size();i++){
-					RadioButton radiobut = new RadioButton(ProductDetailsActivity.this);
-					LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
-							ViewGroup.LayoutParams.WRAP_CONTENT,
-							ViewGroup.LayoutParams.WRAP_CONTENT);
-					layoutParams.height = 47;
-					layoutParams.width = 47;
-					layoutParams.setMargins(80, 80, 80, 80);
-					radiobut.setLayoutParams(layoutParams);
-					radiobut.setId(ly.hashCode() + i);
-					radiobut.requestLayout();
-					radiobut.setButtonDrawable(null);
-//					radiobut.setBackgroundResource(R.drawable.radiobut_bg);
-					int id = radiobut.getId();
-					color[i] = id;
+					LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(56,56);
+					ImageView ivColor = new ImageView(ProductDetailsActivity.this);
+					layoutParams.leftMargin = 6;
+					ivColor.setLayoutParams(layoutParams);
+					ivColor.setScaleType(ScaleType.FIT_XY);
+					ivColor.setBackgroundColor(Color.WHITE);
+					ivColor.setPadding(1, 1, 1, 1);
 					fetcher.fetch(url + colorLists.get(i).colorImage
-							+ ".jpg", radiobut);
-					ly.addView(radiobut);
+							+ ".jpg", ivColor);
+					ly.addView(ivColor);
+					final ImageView iv = (ImageView) ly.getChildAt(i);
+					final int m = i;
+					iv.setOnClickListener(new OnClickListener() {
+						@Override
+						public void onClick(View v) {
+						    colorIndex = colorLists.get(m).id;
+							if(colorIndex != 5656 && sizeIndex != 5656){
+								if (HttpHelper.isNetWokrConnected(ProductDetailsActivity.this)) {
+									new AddToShop().execute(id, colorIndex, sizeIndex);
+								} else {
+									AlertDialog.Builder builder = new AlertDialog.Builder(ProductDetailsActivity.this);
+									builder.setTitle("X-bionic").setMessage("网络不给力啊！")
+									.setPositiveButton("确定", null).create().show();
+								}
+							}
+							for (int j = 0; j < ly.getChildCount(); j++) {
+								if (iv == ly.getChildAt(j)) {
+									iv.setBackgroundResource(R.drawable.imgv_background);
+								} else {
+									ly.getChildAt(j)
+											.setBackgroundResource(
+													R.drawable.imgv_bg_n);
+								}
+							}
+						}
+					});
 				}
-				ls.setOnCheckedChangeListener(ProductDetailsActivity.this);
-				size = new int[sizeList.size()];
 				for(int i= 0;i <sizeList.size();i++){
-					RadioButton radiobut = new RadioButton(ProductDetailsActivity.this);
-					LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
-							ViewGroup.LayoutParams.WRAP_CONTENT,
-							ViewGroup.LayoutParams.WRAP_CONTENT);
-					layoutParams.height = 40;
-					layoutParams.width = 60;
-//					layoutParams.setMargins(50, 50, 50, 50);
-					radiobut.setLayoutParams(layoutParams);
-					((MarginLayoutParams) radiobut.getLayoutParams())
-							.setMargins(30, 0, 30, 0);
-					radiobut.setId(ls.hashCode() + i);
-					//设置动态加载的radiobut的背景
-					radiobut.setBackgroundResource(R.drawable.radiobutton_selector);
-					radiobut.setButtonDrawable(R.drawable.radiobutton_selector);
-					radiobut.setText(sizeList.get(i).size);
-					radiobut.setGravity(Gravity.CENTER);
-					size[i] = radiobut.getId();
-					radiobut.requestLayout();
-					ls.addView(radiobut);
+					LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(67,ViewGroup.LayoutParams.MATCH_PARENT);
+					layoutParams.leftMargin = 3;
+					TextView tvColor = new TextView(ProductDetailsActivity.this);
+					tvColor.setText(sizeList.get(i).size);
+					tvColor.setGravity(Gravity.CENTER);// 居中
+					tvColor.setTextSize(15);
+					tvColor.setTextColor(Color.WHITE);
+					tvColor.setId(ls.hashCode()+i);
+					tvColor.setLayoutParams(layoutParams);
+					tvColor.setBackgroundResource(R.drawable.radiobut_bg_size);
+					ls.addView(tvColor);
+					
+					final TextView tv = (TextView)ls.getChildAt(i);
+					final int m = i;
+					tv.setOnClickListener( new OnClickListener() {
+
+						@Override
+						public void onClick(View v) {
+							sizeIndex = sizeList.get(m).id;
+							for (int j = 0; j < ls.getChildCount(); j++) {
+								if (tv == ls.getChildAt(j)) {
+									tv.setBackgroundResource(R.drawable.sizeselectbuttondown);
+								} else {
+									ls.getChildAt(j).setBackgroundResource(
+													R.drawable.sizeselectbuttonup);
+								}
+							}
+							if(colorIndex != 5656 && sizeIndex != 5656){
+								if (HttpHelper.isNetWokrConnected(ProductDetailsActivity.this)) {
+									new AddToShop().execute(id, colorIndex, sizeIndex);
+								} else {
+									AlertDialog.Builder builder = new AlertDialog.Builder(ProductDetailsActivity.this);
+									builder.setTitle("X-bionic").setMessage("网络不给力啊！")
+									.setPositiveButton("确定", null).create().show();
+								}
+							}
+
+						}
+					});
 				}
 			}
 			super.onPostExecute(result);
@@ -253,6 +286,11 @@ public class ProductDetailsActivity extends FragmentActivity implements OnChecke
 						.fromJSON(json);
 				if (responseJsonEntity.getStatus() == 200) {
 					String data = responseJsonEntity.getData();
+					if(data == null){
+						Toast.makeText(ProductDetailsActivity.this, "没有库存！", Toast.LENGTH_LONG).show();
+						storage = null;
+						return status;
+					}
 					storage = JsonUtil.toObject(data,
 							Storage.class);
 					productQuantityId = storage.id;
@@ -264,9 +302,13 @@ public class ProductDetailsActivity extends FragmentActivity implements OnChecke
 		}
 		@Override
 		protected void onPostExecute(Integer result) {
-			tvcount.setText("(库存"+storage.qty+"件)");
-			if(add){
-				new AddShop().execute(productQuantityId);
+			if(storage == null){
+				tvcount.setText("(库存0件)");
+			}else{
+				tvcount.setText("(库存"+storage.qty+"件)");
+				if(add){
+					new AddShop().execute(productQuantityId);
+				}
 			}
 			super.onPostExecute(result);
 		}
@@ -523,29 +565,6 @@ public class ProductDetailsActivity extends FragmentActivity implements OnChecke
 	}
 
 	@Override
-	public void onCheckedChanged(RadioGroup group, int checkedId) {
-		for (int i = 0; i < color.length; i++) {
-			if (checkedId == color[i]) {
-				colorIndex = i;
-			}
-		}
-		for (int i = 0; i < size.length; i++) {
-			if (checkedId == size[i]) {
-				sizeIndex = i;
-			}
-		}
-		if(colorIndex != 5656 && sizeIndex != 5656){
-			if (HttpHelper.isNetWokrConnected(this)) {
-				new AddToShop().execute(id, colorLists.get(colorIndex).id,
-						sizeList.get(sizeIndex).id);
-			} else {
-				Toast.makeText(this, "网络不给力啊！", Toast.LENGTH_SHORT).show();
-			}
-		}
-		
-	}
-
-	@Override
 	public void onClick(View v) {
 		switch(v.getId()){
 		case R.id.but_shopping:
@@ -569,8 +588,7 @@ public class ProductDetailsActivity extends FragmentActivity implements OnChecke
 				return;
 			}
 			if (HttpHelper.isNetWokrConnected(this)) {
-				new AddShop().execute(id, colorLists.get(colorIndex).id,
-						sizeList.get(sizeIndex).id);
+				new AddShop().execute(id,colorIndex,sizeIndex);
 			} else {
 				builder.setTitle("X-bionic").setMessage("网络不可用")
 						.setPositiveButton("确定", null).create().show();

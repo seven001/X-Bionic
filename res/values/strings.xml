@@ -50,5 +50,6 @@
     <string name="title_activity_shareset">SharesetActivity</string>
     <string name="title_activity_forgetpw">ForgetpwActivity</string>
     <string name="title_activity_comment_for">CommentForActivity</string>
+    <string name="title_activity_xactivity_detail">XActivityDetail</string>
 
 </resources>
